@@ -24,7 +24,7 @@ export default function Advantages({ image, title, description, items }) {
 
                             {/* Мини-блок поверх изображения */}
                             <div className="absolute bottom-[-55px] right-[-40px] bg-[--white-bc] p-3 flex flex-col items-center">
-                                <span className="raleway block text-8xl font-bold text-[--main-color] leading-snug">
+                                <span className="raleway block text-4xl md:text-8xl font-bold text-[--main-color] leading-snug">
                                     20+
                                 </span>
                                 <p className="text-[18px] relative bottom-3 text-[--main-color] opacity-80 leading-relaxed">

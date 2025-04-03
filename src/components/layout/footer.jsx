@@ -2,28 +2,36 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import data from '@/data/data.json'
 
 export default function Footer() {
-	const { internalLinks, contacts } = data
-
 	return (
-		<footer className="bg-[--background-color-footer] text-[--text-color]" id="contacts">
+		<footer className="bg-[--second-color] text-[--text-color] pb-8" id="contacts">
 			<div className="container">
 				{/* Первый ряд */}
 				<div className="flex flex-col md:flex-row justify-between items-center py-6 lg:py-10 gap-6">
 					{/* Логотип */}
-					<div>
-						<h3 className="font-semibold">Экоклимат</h3>
-					</div>
+					<Image
+						src="/icons/logo-white.svg"
+						width={200}
+						height={200}
+						alt="Логотип компании"
+						className="h-auto w-auto object-contain max-h-24"
+					/>
 
 					{/* Навигация */}
 					<div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
-						{internalLinks?.map(({ link, text }) => (
+						{[
+							{ link: '#conditioners', text: 'Кондиционеры' },
+							{ link: '#advantages', text: 'Преимущества' },
+							{ link: '#services', text: 'Услуги' },
+							{ link: '#stages', text: 'Этапы' },
+							{ link: '#about', text: 'О нас' },
+							{ link: '#contacts', text: 'Контакты' }
+						].map(({ link, text }) => (
 							<Link
 								key={text}
 								href={link}
-								className="text-[--text-color] opacity-80 hover:opacity-100 transition-opacity"
+								className="text-[--text-color] hover:opacity-80 transition-opacity"
 							>
 								{text}
 							</Link>
@@ -31,49 +39,41 @@ export default function Footer() {
 					</div>
 
 					{/* Социальные сети */}
-					<div className="flex gap-4 md:gap-6">
+					<div className="flex">
 						{[
-							{ href: 'https://facebook.com', icon: '/icons/facebook.svg', alt: 'Facebook' },
-							{ href: 'https://instagram.com', icon: '/icons/instagram.svg', alt: 'Instagram' },
-							{ href: 'https://twitter.com', icon: '/icons/twitter.svg', alt: 'Twitter' }
-						]?.map(({ href, icon, alt }) => (
+							{ href: '', icon: '/icons/vk.svg', alt: 'VK' },
+							{ href: '', icon: '/icons/tg.svg', alt: 'Telegram' },
+							{ href: '', icon: '/icons/wp.svg', alt: 'Whatsapp' }
+						].map(({ href, icon, alt }) => (
 							<a
 								key={alt}
 								href={href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="opacity-80 hover:opacity-100 transition-opacity"
+								className="hover:opacity-80 transition-opacity ml-3"
 							>
-								<Image src={icon} width={24} height={24} alt={alt} />
+								<Image src={icon} width={36} height={36} alt={alt} />
 							</a>
 						))}
 					</div>
 				</div>
 
 				{/* Второй ряд */}
-				<div className="flex flex-col md:flex-row justify-between items-start pt-6 lg:pt-10 border-t border-white/20 gap-6">
+				<div className="flex flex-col md:flex-row justify-between items-start pt-6 lg:pt-10 gap-6">
 					{/* Адрес */}
 					<div>
-						<p>{contacts.address}</p>
+						<p>г. Ярославль<br /> пр-кт Фрунзе 3</p>
 					</div>
 
 					{/* Копирайт и ссылки */}
-					<div className="flex flex-col items-end gap-4 text-right">
+					<div className="flex flex-col items-end text-right">
 						<p>© Экоклимат {new Date().getFullYear()}</p>
-						<div className="flex flex-col gap-2">
+						<div className="flex flex-col">
 							<Link
 								href="/policy"
-								className="opacity-80 hover:opacity-100 transition-opacity"
+								className="hover:opacity-80 transition-opacity"
 							>
 								Политика конфиденциальности
-							</Link>
-							<Link
-								href="https://api.avs.moscow/uploads/Soglasie_na_obrabotku_personalnyh_dannyh_2c17bbf7ba.pdf"
-								download
-								target="_blank"
-								className="opacity-80 hover:opacity-100 transition-opacity"
-							>
-								Согласие на обработку персональных данных
 							</Link>
 						</div>
 					</div>

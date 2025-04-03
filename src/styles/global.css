@@ -10,8 +10,8 @@ html {
   :root {
     --main-color: #158153;
     --second-color: #052B1B;
-	--white-bc: hsl(0, 0%, 94%);
-    --text-color: #f0f0f0;
+	--white-bc: hsl(0, 0%, 100%);
+    --text-color: #ffffff;
     --background-color: #158153;
     --lightening: #1d1d21;
   }
@@ -74,7 +74,7 @@ html {
   }
 
   .input {
-    @apply w-full border-b border-[--main-color] py-2 bg-transparent outline-none placeholder:text-[--main-color] placeholder:opacity-50;
+    @apply w-full border-b border-[--main-color] py-2 bg-transparent outline-none placeholder:text-[--main-color];
   }
 
   .container {

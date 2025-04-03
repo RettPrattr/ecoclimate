@@ -9,48 +9,46 @@ export default function Contacts({ className, ...props }) {
     const [isLoading, setIsLoading] = useState(false)
 
     return (
-        <section id='contacts' className='py-[--padding-pc] bg-[--background-color]'>
+        <section id='contacts' className='py-[--padding-pc] pb-12 bg-[--white-bc]'>
             <div className='content-container flex flex-col md:flex-row'>
                 {/* Левая часть: Контакты */}
-                <div className='mb-6 flex w-full flex-col md:mb-0 md:mr-12 md:w-7/12'>
-                    <h2 className='text-2xl font-semibold mb-6 md:text-3xl'>
-                        Свяжитесь с нами
+                <div className='mb-6 flex w-full flex-col md:mb-0 md:mr-12 md:w-5/12'>
+                    <h2 className='text-[48px
+                    ] font-bold text-[--second-color] mb-6'>
+                        Контакты
                     </h2>
                     <div className='flex flex-col gap-4'>
                         {/* Телефон */}
                         <div className='flex flex-col'>
-                            <span className='text-base opacity-50 md:text-lg'>Телефон</span>
+                            <span className='text-base text-[--second-color] md:text-lg'>Телефон</span>
                             <a
-                                className='text-xl text-green-500 xs:text-2xl md:text-3xl'
+                                className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
                                 href='tel:+79602811414'>  
                                 +7 (960) 281-14-14
                             </a>
                         </div>
 
-                        {/* Почта */}
-                        <div className='flex flex-col'>
-                            <span className='text-base opacity-50 md:text-lg'>Почта</span>
-                            <a
-                                className='text-xl xs:text-2xl md:text-3xl'
-                                href='mailto:info@reinspace.ru'>
-                                info@reinspace.ru
-                            </a>
-                        </div>
-
                         {/* Адрес */}
                         <div className='flex flex-col'>
-                            <span className='text-base opacity-50 md:text-lg'>Адрес</span>
-                            <p className='text-xl xs:text-2xl md:text-3xl'>
-                                199048, Россия, Санкт-Петербург, <br />
-                                6-я линия Васильевского острова, д. 61 <br />
-                                (проходная 3), офис 301
+                            <span className='text-base text-[--second-color] md:text-lg'>Адрес</span>
+                            <p className='text-xl font-bold text-[--main-color] xs:text-2xl md:text-3xl'>
+                                г. Ярославль, пр-кт Фрунзе 3
                             </p>
+                        </div>
+
+                        <div className='flex flex-col'>
+                            <span className='text-base text-[--second-color] md:text-lg'>Почта</span>
+                            <a
+                                className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
+                                href='mailto:info@reinspace.ru'>
+                                ecoclimat76@mail.ru
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 {/* Правая часть: Карта */}
-                <div className='flex w-full flex-col md:w-5/12'>
+                <div className='flex w-full flex-col md:w-7/12'>
                     <YMaps query={{ lang: 'ru_RU', load: 'Map,Placemark' }}>
                         <Map
                             onLoad={() => {
@@ -59,27 +57,27 @@ export default function Contacts({ className, ...props }) {
                             className={`relative z-10 h-[311px] w-full ${className}`}
                             {...props}
                             defaultState={{
-                                center: [59.949077, 30.272138],
+                                center: [57.599195, 39.875955],
                                 zoom: 12
                             }}>
                             {isLoading &&
                                 createPortal(
-                                    <div className='absolute left-0 top-0 z-[2003] h-full w-full backdrop-grayscale' />,
+                                    <div className='absolute left-0 top-0 z-[2003] h-full w-full' />,
                                     document.querySelector('.ymaps-2-1-79-inner-panes')
                                 )}
                             <Placemark
                                 options={{
                                     iconLayout: 'default#image',
                                     iconImageHref: '/icons/placemark.svg',
-                                    iconImageSize: [20, 20],
-                                    iconImageOffset: [0, -5]
+                                    iconImageSize: [50, 50],
+                                    iconImageOffset: [-25, -50] 
                                 }}
                                 properties={{
                                     hintContent: 'Офис'
                                 }}
                                 modules={['geoObject.addon.hint']}
                                 className='relative z-10'
-                                defaultGeometry={[59.949077, 30.272138]}
+                                defaultGeometry={[57.599195, 39.875955]}
                             />
                         </Map>
                     </YMaps>
