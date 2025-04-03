@@ -2,106 +2,83 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import data from '@/data/data.json' // Импортируем общий JSON
+import data from '@/data/data.json'
 
 export default function Footer() {
-    // Используем данные из globalData
-    const { internalLinks, contacts } = data
+	const { internalLinks, contacts } = data
 
-    return (
-        <footer
-            className='bg-[--background-color-footer] text-[--text-color]'
-            id='contacts'>
-            <div className='container'>
-                {/* Первый ряд */}
-                <div className='flex flex-col md:flex-row justify-between items-center py-[--gap-mobile] lg:py-[--gap-pc]'>
-                    {/* Левая часть - Логотип */}
-                    <div className='mb-[--gap-mobile] md:mb-0'>
-                        <h3 className='text-[--text-color] font-semibold'>Экоклимат</h3>
-                    </div>
+	return (
+		<footer className="bg-[--background-color-footer] text-[--text-color]" id="contacts">
+			<div className="container">
+				{/* Первый ряд */}
+				<div className="flex flex-col md:flex-row justify-between items-center py-6 lg:py-10 gap-6">
+					{/* Логотип */}
+					<div>
+						<h3 className="font-semibold">Экоклимат</h3>
+					</div>
 
-                    {/* Центральная часть - Навигационные ссылки */}
-                    <div className='flex flex-col md:flex-row gap-[--gap-mobile] md:gap-[--gap-pc]'>
-                        {internalLinks.map(({ link, text }) => (
-                            <Link
-                                key={text}
-                                href={link} // Якорные ссылки
-                                className='text-[--text-color] opacity-[--text-opacity-grade] transition-opacity hover:opacity-100'>
-                                {text}
-                            </Link>
-                        ))}
-                    </div>
+					{/* Навигация */}
+					<div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+						{internalLinks?.map(({ link, text }) => (
+							<Link
+								key={text}
+								href={link}
+								className="text-[--text-color] opacity-80 hover:opacity-100 transition-opacity"
+							>
+								{text}
+							</Link>
+						))}
+					</div>
 
-                    {/* Правая часть - Социальные сети */}
-                    <div className='flex gap-[--gap-mobile] md:gap-[--gap-pc]'>
-                        <a
-                            href='https://facebook.com'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='text-[--text-color] opacity-[--text-opacity-grade] transition-opacity hover:opacity-100'>
-                            <Image
-                                src='/icons/facebook.svg'
-                                width={24}
-                                height={24}
-                                alt='Facebook'
-                            />
-                        </a>
-                        <a
-                            href='https://instagram.com'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='text-[--text-color] opacity-[--text-opacity-grade] transition-opacity hover:opacity-100'>
-                            <Image
-                                src='/icons/instagram.svg'
-                                width={24}
-                                height={24}
-                                alt='Instagram'
-                            />
-                        </a>
-                        <a
-                            href='https://twitter.com'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='text-[--text-color] opacity-[--text-opacity-grade] transition-opacity hover:opacity-100'>
-                            <Image
-                                src='/icons/twitter.svg'
-                                width={24}
-                                height={24}
-                                alt='Twitter'
-                            />
-                        </a>
-                    </div>
-                </div>
+					{/* Социальные сети */}
+					<div className="flex gap-4 md:gap-6">
+						{[
+							{ href: 'https://facebook.com', icon: '/icons/facebook.svg', alt: 'Facebook' },
+							{ href: 'https://instagram.com', icon: '/icons/instagram.svg', alt: 'Instagram' },
+							{ href: 'https://twitter.com', icon: '/icons/twitter.svg', alt: 'Twitter' }
+						]?.map(({ href, icon, alt }) => (
+							<a
+								key={alt}
+								href={href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="opacity-80 hover:opacity-100 transition-opacity"
+							>
+								<Image src={icon} width={24} height={24} alt={alt} />
+							</a>
+						))}
+					</div>
+				</div>
 
-                {/* Второй ряд */}
-                <div className='flex flex-col md:flex-row justify-between items-start pt-[--gap-mobile] lg:pt-[--gap-pc] border-t border-[--border-color]'>
-                    {/* Левая часть - Адрес */}
-                    <div className='mb-[--gap-mobile] md:mb-0'>
-                        <p className='text-[--text-color]'>{contacts.address}</p>
-                    </div>
+				{/* Второй ряд */}
+				<div className="flex flex-col md:flex-row justify-between items-start pt-6 lg:pt-10 border-t border-white/20 gap-6">
+					{/* Адрес */}
+					<div>
+						<p>{contacts.address}</p>
+					</div>
 
-                    {/* Правая часть - Копирайт и ссылки */}
-                    <div className='flex flex-col items-end'>
-                        <p className='text-[--text-color] mb-[--gap-mobile] md:mb-[--gap-pc]'>
-                            © Экоклимат {new Date().getFullYear()}
-                        </p>
-                        <div className='flex flex-col gap-[--gap-mobile] md:gap-[--gap-pc]'>
-                            <Link
-                                href='/policy'
-                                className='text-[--text-color] opacity-[--text-opacity-grade] transition-opacity hover:opacity-100'>
-                                Политика конфиденциальности
-                            </Link>
-                            <Link
-                                href='https://api.avs.moscow/uploads/Soglasie_na_obrabotku_personalnyh_dannyh_2c17bbf7ba.pdf'
-                                download
-                                target='_blank'
-                                className='text-[--text-color] opacity-[--text-opacity-grade] transition-opacity hover:opacity-100'>
-                                Согласие на обработку персональных данных
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    )
+					{/* Копирайт и ссылки */}
+					<div className="flex flex-col items-end gap-4 text-right">
+						<p>© Экоклимат {new Date().getFullYear()}</p>
+						<div className="flex flex-col gap-2">
+							<Link
+								href="/policy"
+								className="opacity-80 hover:opacity-100 transition-opacity"
+							>
+								Политика конфиденциальности
+							</Link>
+							<Link
+								href="https://api.avs.moscow/uploads/Soglasie_na_obrabotku_personalnyh_dannyh_2c17bbf7ba.pdf"
+								download
+								target="_blank"
+								className="opacity-80 hover:opacity-100 transition-opacity"
+							>
+								Согласие на обработку персональных данных
+							</Link>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	)
 }

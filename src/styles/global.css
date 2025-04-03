@@ -1,192 +1,130 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Base element styles */
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
-	button {
-		@apply px-3 py-4 rounded-lg bg-black text-white;
-	}
+  :root {
+    --main-color: #158153;
+    --second-color: #052B1B;
+	--white-bc: hsl(0, 0%, 94%);
+    --text-color: #f0f0f0;
+    --background-color: #158153;
+    --lightening: #1d1d21;
+  }
 
-	input {
-		@apply px-3 py-2 outline-none bg-transparent border-b border-black placeholder:text-inherit placeholder:opacity-50
-	}
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  h1 {
+    @apply text-4xl font-bold leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold leading-snug;
+  }
+
+  h3 {
+    @apply text-xl font-semibold leading-normal;
+  }
+
+  p, li, span, a {
+    @apply text-base leading-relaxed;
+  }
+
+  a {
+    @apply transition-opacity duration-300;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+}
+
+@layer components {
+  .button {
+    @apply inline-block font-normal px-6 py-3 rounded-full transition-colors duration-300;
+    color: var(--background-color);
+    background-color: var(--main-color);
+
+    &.second {
+      color: var(--main-color);
+      background-color: var(--second-color);
+    }
+
+    &.background {
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    &.text {
+      background-color: var(--text-color);
+      color: var(--main-color);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  .input {
+    @apply w-full border-b border-[--main-color] py-2 bg-transparent outline-none placeholder:text-[--main-color] placeholder:opacity-50;
+  }
+
+  .container {
+    @apply max-w-screen-xl mx-auto px-4;
+  }
 }
 
 @layer utilities {
-	.decoration-skip-ink-none {
-		text-decoration-skip-ink: none;
-	}
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-	.scrollbar-hide {
-		-ms-overflow-style: none;
-		scrollbar-width: none;
-
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.hidden-opacity {
-	pointer-events: none;
-	opacity: 0;
-	visibility: hidden;
-	z-index: -1;
-	transition:
-		opacity var(--tr-duration, 0.3s),
-		visibility var(--tr-duration, 0.3s) var(--tr-duration, 0.3s),
-		pointer-events var(--tr-duration, 0.3s) var(--tr-duration, 0.3s),
-		z-index var(--tr-duration, 0.3s) var(--tr-duration, 0.3s);
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-	&.opened {
-		opacity: 100;
-		z-index: var(--z-index, 50);
-		pointer-events: auto;
-		visibility: visible;
-		transition:
-			opacity var(--tr-duration, 0.3s),
-			z-index 0s,
-			pointer-events 0s,
-			visibility 0s;
-	}
+/* Яндекс карты — скрываем элементы */
+.ymaps-2-1-79-copyright__content,
+.ymaps-2-1-79-gototaxi__container,
+.ymaps-2-1-79-gototech,
+.ymaps-2-1-79-copyright__logo-cell,
+.ymaps-2-1-79-gotoymaps {
+  display: none !important;
 }
 
-@media(max-width: 767px) {
-	.mobile-menu {
-		position: absolute;
-		overflow: hidden;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		height: 0;
-
-		&.opened {
-			height: 100vh;
-			height: 100dvh;
-
-			@media (max-height: 320px) {
-				overflow-y: scroll;
-			}
-		}
-	}
-
-	.modal-opened-mobile {
-		overflow: hidden;
-	}
-}
-
-:root {
-	--main-color: #CCCAFF;
-	--text-color: #f0f0f0;
-	--background-color: #151515;
-	--text-opacity-grade: 0.8;
-	--lightening: #1d1d21;
-	--radius-image: 0rem;
-	--radius-button: 2.5rem;
-	--radius-icons: 0.25rem;
-	--x-button: 1.5rem;
-	--y-button: 0.75rem;
-	--gap-pc: 1.25rem;
-	--gap-mobile: 1.25rem;
-	--margin-pc: 6rem;
-	--margin-mobile: 1rem;
-	--padding-pc: 3.75rem;
-	--padding-mobile: 3.125rem;
-	--h1: 4rem;
-	--h1-line-h: 1.1;
-	--h2: 2.25rem;
-	--h2-line-h: 1.2;
-	--h3: 1.125rem;
-	--h3-line-h: normal;
-	--p: 1rem;
-	--p-line-h: 1.3;
-	--button: 1rem;
-	--button-line-h: 1.3;
-	--big-p: 1.5rem;
-	--big-p-line-h: 1.3;
-	--hint: 0.875rem;
-	--hint-line-h: 1.3;
-}
-
-body {
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
-	background-color: var(--background-color);
-	color: var(--text-color);
-	line-height: var(--p-line-h);
-}
-
-.container {
+.content-container {
+	width: 100%;
 	max-width: 1200px;
-	margin: 0 auto;
-	padding: var(--padding-mobile);
-}
-
-button,
-.button {
-	background-color: var(--main-color);
-	color: var(--text-color);
-	border: none;
-	border-radius: var(--radius-button);
-	padding: var(--y-button) var(--x-button);
-	font-size: var(--button);
-	line-height: var(--button-line-h);
-	cursor: pointer;
-	transition: opacity 0.3s ease;
-}
-
-button:hover,
-.button:hover {
-	opacity: var(--text-opacity-grade);
-}
-
-header {
-	background-color: var(--background-color);
-	color: var(--text-color);
-}
-
-footer {
-	background-color: var(--lightening);
-	color: var(--text-color);
-	padding: var(--padding-pc) 0;
-}
-
-a {
-	color: var(--main-color);
-	text-decoration: none;
-	transition: opacity 0.3s ease;
-}
-
-a:hover {
-	opacity: var(--text-opacity-grade);
-}
-
-h1 {
-	font-size: var(--h1);
-	line-height: var(--h1-line-h);
-}
-
-h2 {
-	font-size: var(--h2);
-	line-height: var(--h2-line-h);
-}
-
-h3 {
-	font-size: var(--h3);
-	line-height: var(--h3-line-h);
-}
-
-p {
-	font-size: var(--p);
-	line-height: var(--p-line-h);
-}
-
-.big-p {
-	font-size: var(--big-p);
-	line-height: var(--big-p-line-h);
-}
-
-.hint {
-	font-size: var(--hint);
-	line-height: var(--hint-line-h);
-}
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--margin-mobile);
+	padding-right: var(--margin-mobile);
+  }
+  
+  @media (min-width: 768px) {
+	.content-container {
+	  padding-left: calc(var(--margin-mobile) * 1.5);
+	  padding-right: calc(var(--margin-mobile) * 1.5);
+	}
+  }
+  
+  @media (min-width: 1280px) {
+	.content-container {
+	  padding-left: var(--margin-pc);
+	  padding-right: var(--margin-pc);
+	}
+  }
+  

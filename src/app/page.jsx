@@ -1,29 +1,47 @@
-import { revalidateTime } from 'utils/config'
-import getContent from 'utils/requests'
-import generateSEO from 'utils/generate-seo'
+'use client'
 
-import BlockManager from 'components/block-manager'
+// Импортируем данные из JSON
+import data from '@/data/data.json'
 
-export const revalidate = revalidateTime
+// Импортируем компоненты
+import Hero from '@/components/hero'
+import Conditioners from '@/components/conditioners'
+import Advantages from '@/components/advantages'
+import Services from '@/components/services'
+import Stages from '@/components/stages'
+import About from '@/components/about'
+import Contacts from '@/components/contacts'
+import Form from '@/components/form'
 
-export async function generateMetadata() {
-	const { seo } = (await getContent(
-		'index',
-		'populate[seo][populate][metaImage][fields][0]=url'
-	)) || { seo: null }
+export default function HomePage() {
+    // Деструктурируем данные из JSON
+    const { hero, conditioners, advantages, services, stages, about, contacts, form } = data
 
-	
-	if (seo) return generateSEO(seo)
-	return null
-}
+    return (
+        <>
+            {/* Hero */}
+            <Hero {...hero} />
 
-export default async function HomePage() {
-	const { blocks } = (await getContent(
-		'index',
-		'populate[blocks][on][blocks.hero][populate][images][fields][0]=url&populate[blocks][on][blocks.hero][populate]=buttons&populate[blocks][on][blocks.openings][populate][items]=*&populate[blocks][on][blocks.openings][populate][image][fields][0]=url&populate[blocks][on][blocks.action][populate]=button&populate[blocks][on][blocks.form][populate][image][fields][0]=url&populate[blocks][on][blocks.video][populate][video][fields][0]=url&populate[blocks][on][blocks.video][populate][poster][fields][0]=url&populate[blocks][on][blocks.story][populate][image][fields][0]=url&populate[blocks][on][blocks.story][populate]=button&populate[blocks][on][blocks.story][populate][items][populate][service][fields][0]=slug&populate[blocks][on][blocks.services][populate][services][fields][0]=slug&populate[blocks][on][blocks.services][populate][services][fields][1]=name&populate[blocks][on][blocks.services][populate][services][populate][image][fields][0]=url&populate[blocks][on][blocks.map][populate]=*&populate[blocks][on][blocks.contacts]=*'
-	)) || { blocks: [] }
+            {/* Кондиционеры */}
+            <Conditioners {...conditioners} />
 
-	if (!blocks || !Array.isArray(blocks)) return null
+            {/* Преимущества */}
+            <Advantages {...advantages} />
 
-	return <BlockManager blocks={blocks} />
+            {/* Услуги */}
+            <Services {...services} />
+
+            {/* Этапы */}
+            <Stages {...stages} />
+
+            {/* О нас */}
+            <About {...about} />
+
+            {/* Контакты */}
+            <Contacts {...contacts} />
+
+            {/* Форма */}
+            <Form {...form} />
+        </>
+    )
 }

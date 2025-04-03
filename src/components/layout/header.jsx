@@ -2,45 +2,42 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import data from 'data/data.json' // Импортируем общий JSON
+import data from '@/data/data.json'
 import Burger from './burger'
+import LinkButton from '@/components/link-button'
+
+// import Phone from '@/icons/phone.svg'
+// import Location from '@/icons/location.svg'
 
 export default function Header() {
-    // Используем данные из globalData
-    const { logo, internalLinks, button, contacts } = data.header
+    const { logo, internalLinks, button } = data.header
 
     return (
-        <header className='sticky top-0 z-20 bg-[--background-color] text-[--text-color]'>
-            <div className='container'>
-                <div
-                    className='flex flex-row items-center justify-between gap-[--gap-mobile]
-                        lg:gap-[calc(var(--gap-pc)/2)] xl:gap-[--gap-pc] py-[--gap-mobile]
-                        lg:py-[calc(2*var(--gap-pc)/3)]'>
+        <header className="sticky top-0 z-20 bg-[--white-bc] text-[--text-color]">
+            <div className="content-container">
+                <div className="flex flex-row items-center justify-between flex-wrap py-4 lg:gap-6 lg:py-6">
                     {/* Логотип */}
                     {logo && (
-                        <Link href='/' className='shrink-0'>
+                        <Link href="/" className="shrink-0">
                             <Image
-                                src={logo.url}
+                                src="/icons/logo.svg"
                                 width={200}
                                 height={200}
                                 alt={logo.alt}
-                                className='h-full w-auto object-contain
-                                    lg:min-h-[calc(var(--button-line-h)*var(--button)+var(--y-button)*2)]'
+                                className="h-auto w-auto object-contain max-h-24"
                             />
                         </Link>
                     )}
 
                     {/* Навигация */}
-                    <nav role='navigation' className='hidden lg:flex lg:flex-grow'>
-                        <ul
-                            className='flex flex-row items-center gap-[calc(var(--gap-pc)/2)]
-                                xl:gap-[--gap-pc]'>
-                            {internalLinks.map(({ link, text }) => (
-                                <li key={text}>
+                    <nav role="navigation" className="hidden lg:flex">
+                        <ul className="flex flex-row items-center">
+                            {internalLinks?.map(({ link, text }) => (
+                                <li key={text} className="text-[--second-color] hover:text-[--main-color] transition-colors mr-3 md:mr-4 xl:mr-6 last:mr-0">
                                     <Link
-                                        href={link} // Якорная ссылка
-                                        className='text-[length:--p] leading-[--p-line-h] transition-opacity
-                                            hover:opacity-[--text-opacity-grade]'>
+                                        href={link}
+                                        className="text-sm md:text-base opacity-80 hover:opacity-100 transition-opacity"
+                                    >
                                         {text}
                                     </Link>
                                 </li>
@@ -48,32 +45,11 @@ export default function Header() {
                         </ul>
                     </nav>
 
-                    {/* Контакты (видны только на больших экранах) */}
-                    <div className='hidden lg:flex lg:flex-row lg:items-center lg:gap-[calc(var(--gap-pc)/2)]'>
-                        <a
-                            href={`tel:${contacts.phone}`}
-                            className='flex flex-row items-center text-[length:--p] leading-[--p-line-h]'>
-                            <Phone className='mr-[calc(var(--gap-pc)/3)] size-5' />
-                            {contacts.phone}
-                        </a>
-                        <a
-                            href='#contacts'
-                            className='flex flex-row items-center text-[length:--p] leading-[--p-line-h]'>
-                            <Location className='mr-[calc(var(--gap-pc)/3)] size-5' />
-                            {contacts.address}
-                        </a>
-                    </div>
+                    <LinkButton text="Отправить заявку" type={2} href="#conditioners" />
 
-                    {/* Кнопка "Оставить заявку" */}
-                    <Link
-                        href={button.link} // Якорная ссылка
-                        className='button second shrink-0 ml-[--gap-mobile]
-                            lg:ml-[calc(var(--padding-pc)/2)] xl:ml-[--padding-pc]'>
-                        {button.text}
-                    </Link>
 
-                    {/* Бургер для мобильных устройств */}
-                    <Burger className='lg:hidden' />
+                    {/* Мобильное меню */}
+                    <Burger className="lg:hidden" />
                 </div>
             </div>
         </header>
