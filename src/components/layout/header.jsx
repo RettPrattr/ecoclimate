@@ -10,7 +10,7 @@ import LinkButton from '@/components/link-button'
 // import Location from '@/icons/location.svg'
 
 export default function Header() {
-    const { logo, internalLinks, button } = data.header
+    const { logo, internalLinks } = data.header
 
     return (
         <header className="sticky top-0 z-20 bg-[--white-bc] text-[--text-color]">
@@ -18,15 +18,13 @@ export default function Header() {
                 <div className="flex flex-row items-center justify-between flex-wrap py-4 lg:gap-6 lg:py-6">
                     {/* Логотип */}
                     {logo && (
-                        <Link href="/" className="shrink-0">
-                            <Image
-                                src="/icons/logo.svg"
-                                width={200}
-                                height={200}
-                                alt={logo.alt}
-                                className="h-auto w-auto object-contain max-h-24"
-                            />
-                        </Link>
+                        <Image
+                            src="/icons/logo.svg"
+                            width={200}
+                            height={200}
+                            alt={logo.alt}
+                            className="h-auto w-auto object-contain max-h-24"
+                        />
                     )}
 
                     {/* Навигация */}

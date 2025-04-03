@@ -5,7 +5,10 @@ import Image from 'next/image'
 import data from '@/data/data.json'
 
 export default function Promo() {
-	const { address, phone } = data.promo
+	const address = data.promo?.address
+	const phone = data.promo?.phone
+
+	if (!address || !phone) return null // защита от ошибок
 
 	return (
 		<Link
@@ -15,25 +18,25 @@ export default function Promo() {
 			{/* Адрес */}
 			<div className="flex flex-row items-center gap-3">
 				<Image
-					src="/icons/location.svg"
+					src={address.icon.url}
 					width={24}
 					height={24}
-					alt="Адрес"
-					className="size-6"
+					alt={address.icon.alt}
+					className="size-5"
 				/>
-				<span>{address}</span>
+				<span>{address.text}</span>
 			</div>
 
 			{/* Телефон */}
 			<div className="flex flex-row items-center gap-3">
 				<Image
-					src="/icons/phone.svg"
+					src={phone.icon.url}
 					width={24}
 					height={24}
-					alt="Телефон"
-					className="size-6"
+					alt={phone.icon.alt}
+					className="size-4"
 				/>
-				<span>{phone}</span>
+				<span>{phone.text}</span>
 			</div>
 		</Link>
 	)

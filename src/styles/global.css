@@ -19,25 +19,22 @@ html {
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
   }
 
-  h1 {
-    @apply text-4xl font-bold leading-tight;
+  .raleway {
+    font-family: 'Raleway', sans-serif;
   }
 
-  h2 {
-    @apply text-3xl font-bold leading-snug;
-  }
+
 
   h3 {
     @apply text-xl font-semibold leading-normal;
   }
 
-  p, li, span, a {
-    @apply text-base leading-relaxed;
+  p, li, a {
+    @apply text-[18px] leading-relaxed;
   }
 
   a {
@@ -107,7 +104,7 @@ html {
 
 .content-container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1280px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: var(--margin-mobile);

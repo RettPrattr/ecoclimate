@@ -5,19 +5,19 @@ import LinkButton from '@/components/link-button'
 
 export default function Hero({ title, description, image }) {
 	return (
-		<section id="hero" className="bg-[--background-color] text-[--text-color] py-16">
-			<div className="container">
+		<section id="hero" className="bg-[--white-bc] text-[--text-color] py-16">
+			<div className="content-container">
 				<div className="flex flex-col md:flex-row gap-12">
 					{/* Левая часть - Текстовый контент */}
 					<div className="w-full md:w-1/2 flex flex-col justify-center">
 						{/* Заголовок */}
-						<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-							<span className="text-[--main-color]">Продажа, установка, ремонт и обслуживание</span>{' '}
-							<span className="text-[--second-color]">климатической техники</span>
+						<h1 className="mb-4">
+							<span className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.3] mb-6 text-[--main-color]">Продажа, установка, ремонт и обслуживание</span>{' '}
+							<span className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.3] text-[--second-color]">климатической техники</span>
 						</h1>
 
 						{/* Описание */}
-						<p className="text-base opacity-70 mb-6">
+						<p className="text-[18px] text-[--second-color] mb-10">
 							{description}
 						</p>
 

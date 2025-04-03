@@ -1,221 +1,233 @@
 {
-    "promo": {
-      "address": "г. Москва, ул. Ленина, д. 10, офис 5",
-      "phone": "+7 (999) 123-45-67"
+  "promo": {
+    "address": {
+      "text": "г. Ярославль, пр-кт Фрунзе 3",
+      "icon": {
+        "url": "/icons/location.svg",
+        "alt": "Иконка адреса"
+      }
     },
-    "header": {
-      "logo": {
-        "url": "/images/logo.png",
-        "alt": "Логотип компании"
+    "phone": {
+      "text": "+7 (980) 664-04-56",
+      "icon": {
+        "url": "/icons/phone.svg",
+        "alt": "Иконка телефона"
+      }
+    }
+  },
+  "header": {
+    "logo": {
+      "url": "/images/logo.png",
+      "alt": "Логотип компании"
+    },
+    "internalLinks": [
+      {
+        "link": "#conditioners",
+        "text": "Кондиционеры"
       },
-      "internalLinks": [
-        {
-          "link": "#conditioners",
-          "text": "Кондиционеры"
-        },
-        {
-          "link": "#advantages",
-          "text": "Преимущества"
-        },
-        {
-          "link": "#services",
-          "text": "Услуги"
-        },
-        {
-          "link": "#stages",
-          "text": "Этапы"
-        },
-        {
-          "link": "#about",
-          "text": "О нас"
-        },
-        {
-          "link": "#contacts",
-          "text": "Контакты"
-        }
-      ],
-      "button": {
+      {
+        "link": "#advantages",
+        "text": "Преимущества"
+      },
+      {
+        "link": "#services",
+        "text": "Услуги"
+      },
+      {
+        "link": "#stages",
+        "text": "Этапы"
+      },
+      {
+        "link": "#about",
+        "text": "О нас"
+      },
+      {
+        "link": "#contacts",
+        "text": "Контакты"
+      }
+    ],
+    "button": {
+      "text": "Оставить заявку",
+      "link": "#form"
+    }
+  },
+  "hero": {
+    "id": "hero",
+    "title": "Продажа, установка, ремонт и обслуживание климатической техники",
+    "description": "Мы предлагаем профессиональное решение для создания идеального климата в вашем доме или офисе. Наша команда экспертов гарантирует качественную продажу, надежную установку, оперативный ремонт и регулярное обслуживание климатической техники.",
+    "buttons": [
+      {
         "text": "Оставить заявку",
         "link": "#form"
+      },
+      {
+        "text": "Выбрать кондиционер",
+        "link": "#conditioners"
       }
-    },
-    "hero": {
-      "id": "hero",
-      "title": "Продажа, установка, ремонт и обслуживание климатической техники",
-      "description": "Мы предлагаем профессиональное решение для создания идеального климата в вашем доме или офисе. Наша команда экспертов гарантирует качественную продажу, надежную установку, оперативный ремонт и регулярное обслуживание климатической техники.",
-      "buttons": [
-        {
-          "text": "Оставить заявку",
-          "link": "#form"
-        },
-        {
-          "text": "Выбрать кондиционер",
-          "link": "#conditioners"
-        }
-      ],
-      "image": {
-        "url": "/images/hero.png",
-        "alt": "Климатическая техника"
+    ],
+    "image": {
+      "url": "/images/hero.png",
+      "alt": "Климатическая техника"
+    }
+  },
+  "conditioners": {
+    "id": "conditioners",
+    "title": "Кондиционеры",
+    "items": [
+      {
+        "name": "Haier Coral DC AS20HPL2HRA",
+        "catalogLink": "https://www.haieryar.ru/catalog",
+        "price": "48900"
+      },
+      {
+        "name": "HAIER CORAL ON-OFF HSU-07HPL203/R3",
+        "catalogLink": "https://www.haieryar.ru/catalog",
+        "price": "32800"
+      },
+      {
+        "name": "Сплит-система Ballu Olympio Legend BSW-07HN1_24Y комплект",
+        "catalogLink": "https://b2b.rusklimat.com/catalog/product/split-sistema-ballu-olympio-legend-bsw-07hn1-24y-komplekt",
+        "price": "30990"
+      },
+      {
+        "name": "Сплит-система Royal Thermo Perfecto RTP-07HN1 комплект",
+        "catalogLink": "https://b2b.rusklimat.com/catalog/product/split-sistema-royal-thermo-perfecto-rtp-07hn1-komplekt",
+        "price": "Цена уточняется"
       }
-    },
-    "conditioners": {
-      "id": "conditioners",
-      "title": "Кондиционеры",
-      "items": [
-        {
-          "name": "Haier Coral DC AS20HPL2HRA",
-          "catalogLink": "https://www.haieryar.ru/catalog",
-          "price": "48900"
-        },
-        {
-          "name": "HAIER CORAL ON-OFF HSU-07HPL203/R3",
-          "catalogLink": "https://www.haieryar.ru/catalog",
-          "price": "32800"
-        },
-        {
-          "name": "Сплит-система Ballu Olympio Legend BSW-07HN1_24Y комплект",
-          "catalogLink": "https://b2b.rusklimat.com/catalog/product/split-sistema-ballu-olympio-legend-bsw-07hn1-24y-komplekt",
-          "price": "30990"
-        },
-        {
-          "name": "Сплит-система Royal Thermo Perfecto RTP-07HN1 комплект",
-          "catalogLink": "https://b2b.rusklimat.com/catalog/product/split-sistema-royal-thermo-perfecto-rtp-07hn1-komplekt",
-          "price": "Цена уточняется"
-        }
-      ]
-    },
-    "advantages": {
-      "id": "advantages",
-      "title": "Преимущества нашей компании",
-      "description": "Сочетание передовых технологий, ответственности и индивидуального подхода гарантирует высочайший уровень сервиса.",
-      "items": [
-        {
-          "text": "Современный стиль",
-          "icon": "/icons/style.svg"
-        },
-        {
-          "text": "100% гарантия на установку",
-          "icon": "/icons/guarantee.svg"
-        },
-        {
-          "text": "Проверенные кондиционеры",
-          "icon": "/icons/quality.svg"
-        },
-        {
-          "text": "Ответственное исполнение обязательств",
-          "icon": "/icons/responsibility.svg"
-        }
-      ],
-      "image": {
-        "url": "/images/advantages.jpg",
-        "alt": "Преимущества компании"
+    ]
+  },
+  "advantages": {
+    "id": "advantages",
+    "title": "Преимущества нашей компании",
+    "description": "Сочетание передовых технологий, ответственности и индивидуального подхода гарантирует высочайший уровень сервиса.",
+    "items": [
+      {
+        "text": "Современный стиль",
+        "icon": "/icons/style.svg"
+      },
+      {
+        "text": "100% гарантия на установку",
+        "icon": "/icons/guarantee.svg"
+      },
+      {
+        "text": "Проверенные кондиционеры",
+        "icon": "/icons/quality.svg"
+      },
+      {
+        "text": "Ответственное исполнение обязательств",
+        "icon": "/icons/responsibility.svg"
       }
-    },
-    "services": {
-      "id": "services",
-      "title": "Комплексные услуги нашей компании",
-      "description": "Полный цикл работы с системами кондиционирования: продажа, установка, обслуживание и ремонт. Предлагаем комплексные решения для вашего комфорта и надежности техники.",
-      "items": [
-        {
-          "title": "Продажа",
-          "description": "Подберем лучший кондиционер в зависимости от параметров, бюджета и ваших пожеланий."
-        },
-        {
-          "title": "Установка",
-          "description": "Выполним установку вашего, либо нашего кондиционера под ключ."
-        },
-        {
-          "title": "Ремонт",
-          "description": "Произведем ремонт вашего кондиционера в самое ближайшее время."
-        },
-        {
-          "title": "Обслуживание",
-          "description": "Заправим, почистим и произведем техническое обслуживание вашего кондиционера."
+    ],
+    "image": {
+      "url": "/images/advantages.jpg",
+      "alt": "Преимущества компании"
+    }
+  },
+  "services": {
+    "id": "services",
+    "title": "Комплексные услуги нашей компании",
+    "description": "Полный цикл работы с системами кондиционирования: продажа, установка, обслуживание и ремонт. Предлагаем комплексные решения для вашего комфорта и надежности техники.",
+    "items": [
+      {
+        "title": "Продажа",
+        "description": "Подберем лучший кондиционер в зависимости от параметров, бюджета и ваших пожеланий."
+      },
+      {
+        "title": "Установка",
+        "description": "Выполним установку вашего, либо нашего кондиционера под ключ."
+      },
+      {
+        "title": "Ремонт",
+        "description": "Произведем ремонт вашего кондиционера в самое ближайшее время."
+      },
+      {
+        "title": "Обслуживание",
+        "description": "Заправим, почистим и произведем техническое обслуживание вашего кондиционера."
+      }
+    ]
+  },
+  "stages": {
+    "id": "stages",
+    "title": "Этапы работ",
+    "description": "Пошаговая инструкция по взаимодействию с нашими клиентами. Гарантируем качественное выполнение услуг без задержек и переплат.",
+    "items": [
+      {
+        "title": "Вы оставляете заявку",
+        "image": {
+          "url": "/images/apply.png",
+          "alt": "Submit your application"
         }
-      ]
-    },
-    "stages": {
-      "id": "stages",
-      "title": "Этапы работ",
-      "description": "Пошаговая инструкция по взаимодействию с нашими клиентами. Гарантируем качественное выполнение услуг без задержек и переплат.",
-      "items": [
-        {
-          "title": "Вы оставляете заявку",
-          "image": {
-            "url": "/images/stage-1.jpg",
-            "alt": "Вы оставляете заявку"
-          }
-        },
-        {
-          "title": "Менеджер связывается с вами",
-          "image": {
-            "url": "/images/stage-2.jpg",
-            "alt": "Менеджер связывается с вами"
-          }
-        },
-        {
-          "title": "Выезд замерщика",
-          "image": {
-            "url": "/images/stage-3.jpg",
-            "alt": "Выезд замерщика"
-          }
-        },
-        {
-          "title": "Заключаем договор",
-          "image": {
-            "url": "/images/stage-4.jpg",
-            "alt": "Заключаем договор"
-          }
-        },
-        {
-          "title": "Производим установку кондиционера",
-          "image": {
-            "url": "/images/stage-5.jpg",
-            "alt": "Производим установку кондиционера"
-          }
-        },
-        {
-          "title": "Наслаждаетесь чистым воздухом",
-          "image": {
-            "url": "/images/stage-6.jpg",
-            "alt": "Наслаждаетесь чистым воздухом"
-          }
+      },
+      {
+        "title": "Менеджер связывается с вами",
+        "image": {
+          "url": "/images/callback.png",
+          "alt": "Manager contacts you"
         }
-      ]
-    },
-    "about": {
-      "id": "about",
-      "title": "Наши показатели",
-      "items": [
-        {
-          "value": "1000+",
-          "description": "Довольных клиентов"
-        },
-        {
-          "value": "1000+",
-          "description": "Проданных кондиционеров"
-        },
-        {
-          "value": "20+",
-          "description": "Сотрудников в штате"
+      },
+      {
+        "title": "Выезд замерщика",
+        "image": {
+          "url": "/images/measurement.png",
+          "alt": "Site measurement"
         }
-      ]
-    },
-    "contacts": {
-      "id": "contacts",
-      "title": "Контакты",
-      "phone": "+7 (999) 123-45-67",
-      "address": "г. Москва, ул. Ленина, д. 10, офис 5",
-      "email": "info@company.ru"
-    },
-    "form": {
-        "id": "form",
-        "title": "Оставьте заявку прямо сейчас!",
-        "description": "Наш менеджер свяжется с вами в течение 10 минут и ответит на все ваши вопросы.",
-        "consentText": "Нажимая кнопку “Отправить”, вы соглашаетесь с ",
-        "policyLink": {
-          "text": "политикой конфиденциальности",
-          "url": "/policy"
+      },
+      {
+        "title": "Заключаем договор",
+        "image": {
+          "url": "/images/contract.png",
+          "alt": "Sign the contract"
         }
+      },
+      {
+        "title": "Производим установку кондиционера",
+        "image": {
+          "url": "/images/installation.png",
+          "alt": "Air conditioner installation"
+        }
+      },
+      {
+        "title": "Наслаждаетесь чистым воздухом",
+        "image": {
+          "url": "/images/enjoy.png",
+          "alt": "Enjoy clean air"
+        }
+      }
+    ]
+  },
+  "about": {
+    "id": "about",
+    "title": "Наши показатели",
+    "items": [
+      {
+        "value": "1000+",
+        "description": "Довольных клиентов"
+      },
+      {
+        "value": "1000+",
+        "description": "Проданных кондиционеров"
+      },
+      {
+        "value": "20+",
+        "description": "Сотрудников в штате"
+      }
+    ]
+  },
+  "contacts": {
+    "id": "contacts",
+    "title": "Контакты",
+    "phone": "+7 (999) 123-45-67",
+    "address": "г. Москва, ул. Ленина, д. 10, офис 5",
+    "email": "info@company.ru"
+  },
+  "form": {
+    "id": "form",
+    "title": "Оставьте заявку прямо сейчас!",
+    "description": "Наш менеджер свяжется с вами в течение 10 минут и ответит на все ваши вопросы.",
+    "consentText": "Нажимая кнопку “Отправить”, вы соглашаетесь с ",
+    "policyLink": {
+      "text": "политикой конфиденциальности",
+      "url": "/policy"
     }
   }
+}
