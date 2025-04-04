@@ -10,10 +10,13 @@ html {
   :root {
     --main-color: #158153;
     --second-color: #052B1B;
-	--white-bc: hsl(0, 0%, 100%);
+	  --white-bc: hsl(0, 0%, 100%);
     --text-color: #ffffff;
     --background-color: #158153;
     --lightening: #1d1d21;
+
+    --margin-mobile: 16px;
+    --margin-pc: 32px;
   }
 
   body {
@@ -25,6 +28,10 @@ html {
 
   .raleway {
     font-family: 'Raleway', sans-serif;
+  }
+
+  body.modal-opened-mobile {
+    overflow: hidden;
   }
 
 

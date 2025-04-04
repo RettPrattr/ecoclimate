@@ -7,7 +7,7 @@ export default function Advantages({ image, title, description, items }) {
     return (
         <section
             id="advantages"
-            className="bg-[--white-bc] text-[--text-color] pt-16 overflow-visible"
+            className="bg-[--white-bc] text-[--text-color] pt-8 md:pt-16 overflow-visible"
         >
             <div className="content-container">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
@@ -23,11 +23,11 @@ export default function Advantages({ image, title, description, items }) {
                             />
 
                             {/* Мини-блок поверх изображения */}
-                            <div className="absolute bottom-[-55px] right-[-40px] bg-[--white-bc] p-3 flex flex-col items-center">
-                                <span className="raleway block text-4xl md:text-8xl font-bold text-[--main-color] leading-snug">
+                            <div className="absolute bottom-[-55px] right-[-10px] md:bottom-[-55px]  md:right-[-40px] bg-[--white-bc] p-3 flex flex-col items-center">
+                                <span className="raleway block text-7xl md:text-8xl font-bold text-[--main-color] leading-snug">
                                     20+
                                 </span>
-                                <p className="text-[18px] relative bottom-3 text-[--main-color] opacity-80 leading-relaxed">
+                                <p className="text-[18px] relative bottom-5 md:bottom-3 text-[--main-color] opacity-80 leading-relaxed">
                                     опыта
                                 </p>
                             </div>
@@ -36,7 +36,7 @@ export default function Advantages({ image, title, description, items }) {
 
 
                     {/* Правая часть - Текстовый контент */}
-                    <div className="ml-12 w-full md:w-1/2 flex flex-col items-start">
+                    <div className="md:ml-12 w-full md:w-1/2 flex flex-col items-start">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.3] mb-8">
                             <span className="text-[--main-color]">Преимущества</span>
                             <br />
@@ -60,7 +60,7 @@ export default function Advantages({ image, title, description, items }) {
                             ))}
                         </div>
 
-                        <div className="mt-8">
+                        <div className="w-full mb-8 md:mb-0 mt-8 flex justify-center md:justify-start">
                             <LinkButton text="Оставить заявку" type={2} href="#form" />
                         </div>
                     </div>

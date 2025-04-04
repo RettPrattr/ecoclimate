@@ -9,18 +9,17 @@ export default function Contacts({ className, ...props }) {
     const [isLoading, setIsLoading] = useState(false)
 
     return (
-        <section id='contacts' className='py-[--padding-pc] pb-12 bg-[--white-bc]'>
+        <section id='contacts' className='py-[--padding-pc] pb-24 bg-[--white-bc]'>
             <div className='content-container flex flex-col md:flex-row'>
                 {/* Левая часть: Контакты */}
                 <div className='mb-6 flex w-full flex-col md:mb-0 md:mr-12 md:w-5/12'>
-                    <h2 className='text-[48px
-                    ] font-bold text-[--second-color] mb-6'>
+                    <h2 className='text-[48px] font-bold text-[--second-color] mb-6'>
                         Контакты
                     </h2>
                     <div className='flex flex-col gap-4'>
                         {/* Телефон */}
                         <div className='flex flex-col'>
-                            <span className='text-base text-[--second-color] md:text-lg'>Телефон</span>
+                            <span className='mb-2 text-base text-[--second-color] md:text-lg'>Телефон</span>
                             <a
                                 className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
                                 href='tel:+79602811414'>  
@@ -30,14 +29,14 @@ export default function Contacts({ className, ...props }) {
 
                         {/* Адрес */}
                         <div className='flex flex-col'>
-                            <span className='text-base text-[--second-color] md:text-lg'>Адрес</span>
+                            <span className='mb-2 text-base text-[--second-color] md:text-lg'>Адрес</span>
                             <p className='text-xl font-bold text-[--main-color] xs:text-2xl md:text-3xl'>
                                 г. Ярославль, пр-кт Фрунзе 3
                             </p>
                         </div>
 
                         <div className='flex flex-col'>
-                            <span className='text-base text-[--second-color] md:text-lg'>Почта</span>
+                            <span className='mb-2 text-base text-[--second-color] md:text-lg'>Почта</span>
                             <a
                                 className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
                                 href='mailto:info@reinspace.ru'>

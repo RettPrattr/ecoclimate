@@ -77,25 +77,62 @@
       {
         "name": "Haier Coral DC AS20HPL2HRA",
         "catalogLink": "https://www.haieryar.ru/catalog",
-        "price": "48900"
+        "price": "48900",
+        "image": "/images/conditioners/dc.jpg",
+        "description": "Кондиционеры серии Coral DC отличаются стильным и современным дизайном. Применение экологически чистого фреона R32 не только снижает негативное воздействие на природу."
       },
       {
         "name": "HAIER CORAL ON-OFF HSU-07HPL203/R3",
         "catalogLink": "https://www.haieryar.ru/catalog",
-        "price": "32800"
+        "price": "32800",
+        "image": "/images/conditioners/coral.png",
+        "description": "Матово-белый внутренний блок легко впишется в практически любой интерьер. Особенность — уникальная конструкция жалюзи, создающая восходящий воздушный поток."
       },
       {
         "name": "Сплит-система Ballu Olympio Legend BSW-07HN1_24Y комплект",
         "catalogLink": "https://b2b.rusklimat.com/catalog/product/split-sistema-ballu-olympio-legend-bsw-07hn1-24y-komplekt",
-        "price": "30990"
+        "price": "30990",
+        "image": "/images/conditioners/ballu.jpg",
+        "description": "Легендарная серия Olympio Legend воплотила в себе оптимальный набор функций бытовых кондиционеров."
       },
       {
         "name": "Сплит-система Royal Thermo Perfecto RTP-07HN1 комплект",
         "catalogLink": "https://b2b.rusklimat.com/catalog/product/split-sistema-royal-thermo-perfecto-rtp-07hn1-komplekt",
-        "price": "Цена уточняется"
+        "price": "Цена уточняется",
+        "image": "/images/conditioners/royal.jpg",
+        "description": "Сплит-системы Perfecto работают в расширенном диапазоне напряжения 175-264В, что актуально для домов с частыми скачками."
+      },
+      {
+        "name": "Сплит-система Electrolux Fusion EVO EACS-07HF/N3",
+        "catalogLink": "https://www.electrolux.ru/appliances/air-conditioners/eacs-07hf-n3/",
+        "price": "35400",
+        "image": "/images/conditioners/electrolux.jpg",
+        "description": "Инверторные сплит-системы Electrolux Smartline DC — комфорт, Wi-Fi управление и энергоэффективность."
+      },
+      {
+        "name": "Сплит-система Toshiba RAS-07U2KH3S-EE",
+        "catalogLink": "https://www.toshiba-climate.ru/catalog/ras-07u2kh3s-ee/",
+        "price": "44700",
+        "image": "/images/conditioners/toshiba.jpg",
+        "description": "Инверторный кондиционер Toshiba Seiya — экономичная работа и точное поддержание температуры без сквозняков."
+      },
+      {
+        "name": "Shuft SFT-07HN1",
+        "catalogLink": "https://shuft.ru/catalog/split-sistemy/sft-07hn1/",
+        "price": "29800",
+        "image": "/images/conditioners/shuft.jpg",
+        "description": "Лаконичный дизайн и оптимальный набор режимов делают серию SHUFT BERG одним из лучших предложений на рынке."
+      },
+      {
+        "name": "VIOMI VX Split Inverter",
+        "catalogLink": "https://viomi.com.ru/products/vx-split-inverter",
+        "price": "41000",
+        "image": "/images/conditioners/viomi.png",
+        "description": "Управление через MiHome, УФ-стерилизация, I Feel, 3D Airflow, R32, А++ и Алиса — всё в одном устройстве."
       }
     ]
-  },
+  }
+  ,
   "advantages": {
     "id": "advantages",
     "title": "Преимущества нашей компании",

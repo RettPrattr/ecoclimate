@@ -33,42 +33,39 @@ export default function Services({ title, description, items }) {
 
                     {/* Правая часть - Сетка услуг */}
                     <div className="w-full md:w-1/2 relative">
-                        <div className="grid grid-cols-2 grid-rows-2 border border-white/70">
+                        <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-2 border border-white/70">
                             {items?.map(({ title, description, link }, index) => {
-                                const borderClasses = [
-                                    'border-r border-b',
-                                    'border-b',
-                                    'border-r',
-                                    ''
-                                ][index]
+                                const desktopBorders = ['md:border-r md:border-b', 'md:border-b', 'md:border-r', '']
+                                const mobileBorders = index < 3 ? 'border-b' : ''
+                                const borderClasses = `${mobileBorders} ${desktopBorders[index]}`
 
                                 return (
-                                    <div
-                                        key={index}
-                                        className={`group cursor-pointer bg-transparent hover:bg-[--main-color] transition-colors duration-300 border-white/70 text-white p-6 flex flex-col justify-between items-start ${borderClasses}`}
-                                    >
-                                        <div className="flex flex-col flex-grow">
-                                            <h3 className="text-[24px] font-semibold mb-6">{title}</h3>
-                                            <p className="text-[18px] mb-7">{description}</p>
-                                        </div>
+    <div
+        key={index}
+        className={`group cursor-pointer bg-transparent hover:bg-[--main-color] transition-colors duration-300 border-white/70 text-white p-6 flex flex-col justify-between items-start h-full ${borderClasses}`}
+    >
+        <div className="flex flex-col flex-grow">
+            <h3 className="text-[24px] font-semibold mb-6">{title}</h3>
+            <p className="text-[18px] mb-7 w-[65%] md:w-full">{description}</p>
+        </div>
 
-                                        <Link
-                                            href=""
-                                            className="flex items-center text-[18px] mt-auto"
-                                        >
-                                            выбрать услугу
-                                            <Image
-                                                src="/icons/arrow.svg"
-                                                alt="Стрелка"
-                                                width={8}
-                                                height={8}
-                                                className="ml-3 transition-transform duration-300 group-hover:translate-x-1"
-                                            />
-                                        </Link>
-                                    </div>
+        <Link href="" className="flex items-center text-[18px] mt-auto">
+            выбрать услугу
+            <Image
+                src="/icons/arrow.svg"
+                alt="Стрелка"
+                width={8}
+                height={8}
+                className="ml-3 transition-transform duration-300 group-hover:translate-x-1"
+            />
+        </Link>
+    </div>
+
+
                                 )
                             })}
                         </div>
+
                     </div>
 
 

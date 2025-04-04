@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='ru'>
 			<body className={`mx-auto min-w-80 ${nunito.className}`}>
-				<Promo/>
+				<Promo className='hidden md:flex'/>
 				<Header
 				/>
 				{/* <Script /> */}

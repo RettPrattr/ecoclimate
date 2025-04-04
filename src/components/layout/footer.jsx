@@ -8,7 +8,7 @@ export default function Footer() {
 		<footer className="bg-[--second-color] text-[--text-color] pb-8" id="contacts">
 			<div className="container">
 				{/* Первый ряд */}
-				<div className="flex flex-col md:flex-row justify-between items-center py-6 lg:py-10 gap-6">
+				<div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 lg:py-10 gap-6">
 					{/* Логотип */}
 					<Image
 						src="/icons/logo-white.svg"
@@ -19,7 +19,7 @@ export default function Footer() {
 					/>
 
 					{/* Навигация */}
-					<div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+					<div className="flex flex-col md:flex-row gap-2 md:gap-6 md:items-center">
 						{[
 							{ link: '#conditioners', text: 'Кондиционеры' },
 							{ link: '#advantages', text: 'Преимущества' },
@@ -40,22 +40,37 @@ export default function Footer() {
 
 					{/* Социальные сети */}
 					<div className="flex">
-						{[
-							{ href: '', icon: '/icons/vk.svg', alt: 'VK' },
-							{ href: '', icon: '/icons/tg.svg', alt: 'Telegram' },
-							{ href: '', icon: '/icons/wp.svg', alt: 'Whatsapp' }
-						].map(({ href, icon, alt }) => (
-							<a
-								key={alt}
-								href={href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="hover:opacity-80 transition-opacity ml-3"
-							>
-								<Image src={icon} width={36} height={36} alt={alt} />
-							</a>
-						))}
+						{/* Первый элемент — без ml-3 */}
+						<a
+							href=""
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:opacity-80 transition-opacity md:ml-3"
+						>
+							<Image src="/icons/vk.svg" width={36} height={36} alt="VK" />
+						</a>
+
+						{/* Второй элемент — ml-3 на всех разрешениях + md:ml-3 */}
+						<a
+							href=""
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:opacity-80 transition-opacity ml-3 md:ml-3"
+						>
+							<Image src="/icons/tg.svg" width={36} height={36} alt="Telegram" />
+						</a>
+
+						{/* Третий элемент — ml-3 на всех разрешениях + md:ml-3 */}
+						<a
+							href=""
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:opacity-80 transition-opacity ml-3 md:ml-3"
+						>
+							<Image src="/icons/wp.svg" width={36} height={36} alt="Whatsapp" />
+						</a>
 					</div>
+
 				</div>
 
 				{/* Второй ряд */}
@@ -66,7 +81,7 @@ export default function Footer() {
 					</div>
 
 					{/* Копирайт и ссылки */}
-					<div className="flex flex-col items-end text-right">
+					<div className="flex flex-col md:items-end md:text-right">
 						<p>© Экоклимат {new Date().getFullYear()}</p>
 						<div className="flex flex-col">
 							<Link

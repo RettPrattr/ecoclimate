@@ -19,7 +19,7 @@ export default function About({ title, items }) {
                                 </span>
 
                                 {/* Описание */}
-                                <p className="text-[18px] text-[--main-color] opacity-80 mt-3 leading-relaxed">
+                                <p className="text-[18px] text-[--second-color] opacity-80 mt-3 leading-relaxed">
                                     {description}
                                 </p>
                             </div>

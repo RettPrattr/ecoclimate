@@ -5,12 +5,13 @@ import BlazeSlider from 'blaze-slider'
 
 export default function useBlazeSlider(config) {
 	const elRef = useRef(null)
+	const sliderRef = useRef(null)
 
 	useEffect(() => {
-		if (elRef.current) {
-			new BlazeSlider(elRef.current, config)
+		if (elRef.current && !sliderRef.current) {
+			sliderRef.current = new BlazeSlider(elRef.current, config)
 		}
-	}, [config])
+	}, []) // важно: не зависим от config
 
 	return elRef
 }

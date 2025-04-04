@@ -22,14 +22,14 @@ export default function Hero({ title, description, image }) {
 						</p>
 
 						{/* Кнопки */}
-						<div className="flex flex-row gap-4 md:gap-6">
+						<div className="flex flex-col text-center md:flex-row gap-4 md:gap-6">
 							<LinkButton text="Оставить заявку" type={1} href="#form" />
 							<LinkButton text="Выбрать кондиционер" type={2} href="#conditioners" />
 						</div>
 					</div>
 
 					{/* Правая часть - Изображение */}
-					<div className="w-full md:w-1/2 relative">
+					<div className="hidden md:block w-full md:w-1/2 relative">
 						<Image
 							src={image.url}
 							width={800}
