@@ -21,7 +21,7 @@ export default function Contacts({ className, ...props }) {
                         <div className='flex flex-col'>
                             <span className='mb-2 text-base text-[--second-color] md:text-lg'>Телефон</span>
                             <a
-                                className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
+                                className='hover:text-[--main-color] transiition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
                                 href='tel:+79602811414'>  
                                 +7 (960) 281-14-14
                             </a>
@@ -30,7 +30,7 @@ export default function Contacts({ className, ...props }) {
                         {/* Адрес */}
                         <div className='flex flex-col'>
                             <span className='mb-2 text-base text-[--second-color] md:text-lg'>Адрес</span>
-                            <p className='text-xl font-bold text-[--main-color] xs:text-2xl md:text-3xl'>
+                            <p className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'>
                                 г. Ярославль, пр-кт Фрунзе 3
                             </p>
                         </div>
@@ -38,7 +38,7 @@ export default function Contacts({ className, ...props }) {
                         <div className='flex flex-col'>
                             <span className='mb-2 text-base text-[--second-color] md:text-lg'>Почта</span>
                             <a
-                                className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
+                                className='hover:text-[--main-color] transiition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
                                 href='mailto:info@reinspace.ru'>
                                 ecoclimat76@mail.ru
                             </a>

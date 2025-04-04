@@ -35,13 +35,15 @@ export default function Header() {
 		<header className="sticky top-0 z-20 bg-[--white-bc] text-[--text-color]">
 			<div className="content-container relative">
 				<div className="flex items-center justify-between py-4 lg:py-6">
-					<Image
-						src={isMobileMenuOpen ? '/icons/logo-white.svg' : '/icons/logo.svg'}
-						width={160}
-						height={40}
-						alt={logo.alt}
-						className="h-auto w-auto object-contain max-h-[40px] z-30"
-					/>
+                    <Link href="/" aria-label="На главную">
+                        <Image
+                            src={isMobileMenuOpen ? '/icons/logo-white.svg' : '/icons/logo.svg'}
+                            width={160}
+                            height={40}
+                            alt={logo.alt}
+                            className="h-auto w-auto object-contain max-h-[40px] z-30"
+                        />
+                    </Link>
 
 					<nav role="navigation" className="hidden lg:flex">
 						<ul className="flex flex-row items-center">

@@ -40,26 +40,27 @@ export default function Services({ title, description, items }) {
                                 const borderClasses = `${mobileBorders} ${desktopBorders[index]}`
 
                                 return (
-    <div
-        key={index}
-        className={`group cursor-pointer bg-transparent hover:bg-[--main-color] transition-colors duration-300 border-white/70 text-white p-6 flex flex-col justify-between items-start h-full ${borderClasses}`}
-    >
-        <div className="flex flex-col flex-grow">
-            <h3 className="text-[24px] font-semibold mb-6">{title}</h3>
-            <p className="text-[18px] mb-7 w-[65%] md:w-full">{description}</p>
-        </div>
+                                    <Link
+                                        href="#form"
+                                        key={index}
+                                        className={`group cursor-pointer bg-transparent hover:bg-[--main-color] transition-colors duration-300 border-white/70 text-white p-6 flex flex-col justify-between items-start h-full ${borderClasses}`}
+                                    >
+                                        <div className="flex flex-col flex-grow">
+                                            <h3 className="text-[24px] font-semibold mb-6">{title}</h3>
+                                            <p className="text-[18px] mb-7 w-[65%] md:w-full">{description}</p>
+                                        </div>
 
-        <Link href="" className="flex items-center text-[18px] mt-auto">
-            выбрать услугу
-            <Image
-                src="/icons/arrow.svg"
-                alt="Стрелка"
-                width={8}
-                height={8}
-                className="ml-3 transition-transform duration-300 group-hover:translate-x-1"
-            />
-        </Link>
-    </div>
+                                        <div className="flex items-center text-[18px] mt-auto">
+                                            выбрать услугу
+                                            <Image
+                                                src="/icons/arrow.svg"
+                                                alt="Стрелка"
+                                                width={8}
+                                                height={8}
+                                                className="ml-3 transition-transform duration-300 group-hover:translate-x-1"
+                                            />
+                                        </div>
+                                    </Link>
 
 
                                 )

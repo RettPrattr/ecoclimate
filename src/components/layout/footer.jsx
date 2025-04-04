@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Footer() {
 	return (
-		<footer className="bg-[--second-color] text-[--text-color] pb-8" id="contacts">
+		<footer className="pt-48 bg-[--second-color] text-[--text-color] pb-8" id="contacts">
 			<div className="container">
 				{/* Первый ряд */}
 				<div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 lg:py-10 gap-6">

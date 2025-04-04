@@ -12,17 +12,19 @@ export default function LinkButton({ text = '', href = '#', type = 1, className 
 
 	const classes = `${baseStyles} ${typeStyles[type] || typeStyles[1]} ${className}`
 
+	const textSpan = <span className="relative top-[1px]">{text}</span>
+
 	if (type === 3) {
 		return (
-			<button type="submit" className={classes}>
-				{text}
+			<button type="submit" className={`leading-[1.2] ${classes}`}>
+				{textSpan}
 			</button>
 		)
 	}
 
 	return (
 		<Link href={href} className={classes}>
-			{text}
+			{textSpan}
 		</Link>
 	)
 }

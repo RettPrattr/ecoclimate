@@ -10,6 +10,9 @@ export default function Hero({ title, description, image }) {
 				<div className="flex flex-col md:flex-row gap-12">
 					{/* Левая часть - Текстовый контент */}
 					<div className="w-full md:w-1/2 flex flex-col justify-center">
+						<div className="rounded-lg w-fit mb-6 px-4 py-2 bg-[--main-color] text-[--white-bc] text-center font-medium">
+							№1 в Ярославле и ЯО
+                        </div>
 						{/* Заголовок */}
 						<h1 className="mb-4">
 							<span className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.3] mb-6 text-[--main-color]">Продажа, установка, ремонт и обслуживание</span>{' '}
@@ -29,15 +32,18 @@ export default function Hero({ title, description, image }) {
 					</div>
 
 					{/* Правая часть - Изображение */}
-					<div className="hidden md:block w-full md:w-1/2 relative">
-						<Image
-							src={image.url}
-							width={800}
-							height={800}
-							alt={image.alt}
-							className="w-full h-auto object-cover rounded-md"
-						/>
+					<div className="hidden md:block w-full md:w-1/2 relative overflow-visible">
+						<div className="absolute top-0 right-[-27.5%] w-[140%]">
+							<Image
+								src={image.url}
+								width={1000}
+								height={1000}
+								alt={image.alt}
+								className="w-full h-auto object-cover rounded-md"
+							/>
+						</div>
 					</div>
+
 				</div>
 			</div>
 		</section>
