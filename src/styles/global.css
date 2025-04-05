@@ -26,9 +26,9 @@ html {
     line-height: 1.6;
   }
 
-  .raleway {
+  /* .raleway {
     font-family: 'Raleway', sans-serif;
-  }
+  } */
 
   body.modal-opened-mobile {
     overflow: hidden;
@@ -130,5 +130,15 @@ html {
 	  padding-left: var(--margin-pc);
 	  padding-right: var(--margin-pc);
 	}
+  }
+
+  .mobile-menu-open {
+    background-color: var(--second-color);
+  }
+
+    /* styles.css или tailwind-classes через className */
+  .logo-white {
+    transform: scale(0.88); /* подогнано под визуальный масштаб */
+    transform-origin: left center; /* чтобы не съезжал */
   }
   

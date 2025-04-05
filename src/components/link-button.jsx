@@ -12,7 +12,7 @@ export default function LinkButton({ text = '', href = '#', type = 1, className 
 
 	const classes = `${baseStyles} ${typeStyles[type] || typeStyles[1]} ${className}`
 
-	const textSpan = <span className="relative top-[1px]">{text}</span>
+	const textSpan = <span className="relative md:top-[1px]">{text}</span>
 
 	if (type === 3) {
 		return (

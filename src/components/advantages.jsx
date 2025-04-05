@@ -23,8 +23,8 @@ export default function Advantages({ image, title, description, items }) {
                             />
 
                             {/* Мини-блок поверх изображения */}
-                            <div className="absolute bottom-[-55px] right-[-10px] md:bottom-[-55px] md:right-[-40px] bg-[--white-bc] w-[120px] h-[120px] flex flex-col items-center justify-center">
-                                <span className="raleway block text-5xl md:text-6xl font-bold text-[--main-color] leading-snug">
+                            <div className="absolute bottom-[-55px] right-[-10px] md:bottom-[-55px] md:right-[-40px] bg-[--white-bc] w-[160px] h-[160px] flex flex-col items-center justify-center">
+                                <span className="raleway block text-5xl md:text-7xl font-bold text-[--main-color] leading-snug">
                                     20+
                                 </span>
                                 <p className="text-[14px] md:text-[16px] text-[--main-color] opacity-80 leading-relaxed">

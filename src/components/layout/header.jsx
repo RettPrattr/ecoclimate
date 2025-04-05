@@ -1,30 +1,30 @@
 'use client'
 
-import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import data from '@/data/data.json'
 import Burger from './burger'
+import Logo from './logo'
 import LinkButton from '@/components/link-button'
-import { useState, useEffect } from 'react'
 
 export default function Header() {
 	const { logo, internalLinks } = data.header
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
 
 	useEffect(() => {
-		const bodyClass = 'modal-opened-mobile'
-		document.body.classList.toggle(bodyClass, isMobileMenuOpen)
-		return () => document.body.classList.remove(bodyClass)
-	}, [isMobileMenuOpen])
-
-	useEffect(() => {
-		const handleResize = () => {
-			if (window.innerWidth > 768 && isMobileMenuOpen) {
-				setIsMobileMenuOpen(false)
-			}
+		const updateMobile = () => {
+			setIsMobile(window.innerWidth < 1024)
 		}
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
+		updateMobile()
+		window.addEventListener('resize', updateMobile)
+		return () => window.removeEventListener('resize', updateMobile)
+	}, [])
+
+	useEffect(() => {
+		document.body.classList.toggle('modal-opened-mobile', isMobileMenuOpen)
+		return () => document.body.classList.remove('modal-opened-mobile')
 	}, [isMobileMenuOpen])
 
 	const handleLinkClick = () => {
@@ -32,18 +32,17 @@ export default function Header() {
 	}
 
 	return (
-		<header className="sticky top-0 z-20 bg-[--white-bc] text-[--text-color]">
+		<header
+			className={`
+				sticky top-[-1px] z-20 text-[--text-color]
+				${isMobileMenuOpen ? 'mobile-menu-open' : 'bg-[--white-bc]'}
+			`}
+		>
 			<div className="content-container relative">
 				<div className="flex items-center justify-between py-4 lg:py-6">
-                    <Link href="/" aria-label="На главную">
-                        <Image
-                            src={isMobileMenuOpen ? '/icons/logo-white.svg' : '/icons/logo.svg'}
-                            width={160}
-                            height={40}
-                            alt={logo.alt}
-                            className="h-auto w-auto object-contain max-h-[40px] z-30"
-                        />
-                    </Link>
+					<div className="z-40">
+						<Logo isMobile={isMobile} isMenuOpen={isMobileMenuOpen} />
+					</div>
 
 					<nav role="navigation" className="hidden lg:flex">
 						<ul className="flex flex-row items-center">
@@ -65,19 +64,18 @@ export default function Header() {
 					</div>
 
 					<Burger
-						className="lg:hidden z-30"
+						className="lg:hidden z-50"
 						isOpen={isMobileMenuOpen}
 						onClick={() => setIsMobileMenuOpen(prev => !prev)}
 					/>
 				</div>
 
-				{/* Мобильное меню */}
 				<div
 					className={`mobile-menu lg:hidden fixed inset-0 z-20 flex flex-col justify-start pt-28 pb-10 transition-all duration-300
 						${isMobileMenuOpen ? 'opened bg-[--second-color] visible opacity-100' : 'invisible opacity-0'}
 					`}
 				>
-					<ul className="flex flex-col gap-4 text-[--white-bc] text-[18px] font-bold pl-6">
+					<ul className="flex flex-col gap-4 text-[--white-bc] text-[18px] font-bold pl-4">
 						{internalLinks?.map(({ link, text }) => (
 							<li key={text}>
 								<Link href={link} className="hover:underline" onClick={handleLinkClick}>
@@ -87,45 +85,26 @@ export default function Header() {
 						))}
 					</ul>
 
-					{/* Адрес */}
-					<div className="mt-8 pl-6 text-[--white-bc] text-sm leading-relaxed">
+					<div className="mt-8 pl-4 text-[--white-bc] text-sm leading-relaxed">
 						<p>г. Ярославль пр-кт Фрунзе 3</p>
 					</div>
 
-					{/* Соцсети */}
-					<div className="mt-6 pl-6 flex gap-4">
-						<a
-							href=""
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:opacity-80 transition-opacity"
-						>
+					<div className="mt-6 pl-4 flex gap-4">
+						<a href="" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
 							<Image src="/icons/vk.svg" width={48} height={48} alt="VK" />
 						</a>
-						<a
-							href=""
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:opacity-80 transition-opacity"
-						>
+						<a href="" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
 							<Image src="/icons/tg.svg" width={48} height={48} alt="Telegram" />
 						</a>
-						<a
-							href=""
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:opacity-80 transition-opacity"
-						>
+						<a href="" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
 							<Image src="/icons/wp.svg" width={48} height={48} alt="Whatsapp" />
 						</a>
 					</div>
 
-					{/* Кнопка */}
-					<div className="mt-6 pl-6">
+					<div className="mt-6 pl-4">
 						<LinkButton text="Отправить заявку" type={4} href="#form" />
 					</div>
 
-					{/* Подвал */}
 					<div className="mt-auto pl-6 text-[--white-bc] text-sm pt-10">
 						<p className="mb-1">© Экоклимат {new Date().getFullYear()}</p>
 						<Link href="/policy" className="hover:underline">

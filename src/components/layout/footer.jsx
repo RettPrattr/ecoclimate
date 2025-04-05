@@ -10,13 +10,15 @@ export default function Footer() {
 				{/* Первый ряд */}
 				<div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 lg:py-10 gap-6">
 					{/* Логотип */}
-					<Image
-						src="/icons/logo-white.svg"
-						width={200}
-						height={200}
-						alt="Логотип компании"
-						className="h-auto w-auto object-contain max-h-24"
-					/>
+					<Link href="/" aria-label="На главную">
+						<Image
+							src="/icons/logo-white.svg"
+							width={200}
+							height={200}
+							alt="Логотип компании"
+							className="h-auto w-auto object-contain max-h-24"
+						/>
+                    </Link>
 
 					{/* Навигация */}
 					<div className="flex flex-col md:flex-row gap-2 md:gap-6 md:items-center">

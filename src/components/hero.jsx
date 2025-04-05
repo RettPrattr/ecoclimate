@@ -5,7 +5,7 @@ import LinkButton from '@/components/link-button'
 
 export default function Hero({ title, description, image }) {
 	return (
-		<section id="hero" className="bg-[--white-bc] text-[--text-color] py-16">
+		<section id="hero" className="bg-[--white-bc] text-[--text-color] pt-8 md:pt-16 pb-16">
 			<div className="content-container">
 				<div className="flex flex-col md:flex-row gap-12">
 					{/* Левая часть - Текстовый контент */}

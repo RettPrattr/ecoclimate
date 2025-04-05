@@ -21,24 +21,31 @@ export default function Contacts({ className, ...props }) {
                         <div className='flex flex-col'>
                             <span className='mb-2 text-base text-[--second-color] md:text-lg'>Телефон</span>
                             <a
-                                className='hover:text-[--main-color] transiition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
-                                href='tel:+79602811414'>  
+                                className='w-fit hover:text-[--main-color] transiition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
+                                href='tel:+79602811414'>
                                 +7 (960) 281-14-14
                             </a>
                         </div>
 
                         {/* Адрес */}
+                        {/* Адрес */}
                         <div className='flex flex-col'>
                             <span className='mb-2 text-base text-[--second-color] md:text-lg'>Адрес</span>
-                            <p className='text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'>
+                            <a
+                                className='w-fit hover:text-[--main-color] transition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
+                                href='https://yandex.ru/maps/?ll=39.875955%2C57.599195&z=16&pt=39.875955,57.599195'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
                                 г. Ярославль, пр-кт Фрунзе 3
-                            </p>
+                            </a>
                         </div>
+
 
                         <div className='flex flex-col'>
                             <span className='mb-2 text-base text-[--second-color] md:text-lg'>Почта</span>
                             <a
-                                className='hover:text-[--main-color] transiition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
+                                className='w-fit hover:text-[--main-color] transiition-colors text-xl font-bold text-[--second-color] xs:text-2xl md:text-3xl'
                                 href='mailto:info@reinspace.ru'>
                                 ecoclimat76@mail.ru
                             </a>
@@ -53,7 +60,7 @@ export default function Contacts({ className, ...props }) {
                             onLoad={() => {
                                 setIsLoading(true)
                             }}
-                            className={`relative z-10 h-[311px] w-full ${className}`}
+                            className={`relative z-10 h-[370px] w-full ${className}`}
                             {...props}
                             defaultState={{
                                 center: [57.599195, 39.875955],
@@ -69,7 +76,7 @@ export default function Contacts({ className, ...props }) {
                                     iconLayout: 'default#image',
                                     iconImageHref: '/icons/placemark.svg',
                                     iconImageSize: [50, 50],
-                                    iconImageOffset: [-25, -50] 
+                                    iconImageOffset: [-25, -50]
                                 }}
                                 properties={{
                                     hintContent: 'Офис'

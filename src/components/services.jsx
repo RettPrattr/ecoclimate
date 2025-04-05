@@ -43,7 +43,7 @@ export default function Services({ title, description, items }) {
                                     <Link
                                         href="#form"
                                         key={index}
-                                        className={`group cursor-pointer bg-transparent hover:bg-[--main-color] transition-colors duration-300 border-white/70 text-white p-6 flex flex-col justify-between items-start h-full ${borderClasses}`}
+                                        className={`hover:opacity-100 group cursor-pointer bg-transparent hover:bg-[--main-color] transition-colors duration-300 border-white/70 text-white p-6 flex flex-col justify-between items-start h-full ${borderClasses}`}
                                     >
                                         <div className="flex flex-col flex-grow">
                                             <h3 className="text-[24px] font-semibold mb-6">{title}</h3>
