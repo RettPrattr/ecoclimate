@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Logo({ isMobile = false, isMenuOpen = false, className = '' }) {
+export default function Logo({ isMobile = false, isMenuOpen = false, className = '', onClick }) {
 	let logoSrc = '/icons/logo.svg'
 	let logoHeight = '70px'
 
@@ -28,6 +28,7 @@ export default function Logo({ isMobile = false, isMenuOpen = false, className =
 				href="/"
 				aria-label="На главную"
 				className="absolute inset-0 z-10"
+				onClick={onClick}
 			/>
 		</div>
 	)
