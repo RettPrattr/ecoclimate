@@ -79,7 +79,7 @@ export default function Footer() {
 				<div className="flex flex-col md:flex-row justify-between items-start pt-6 lg:pt-10 gap-6">
 					{/* Адрес */}
 					<div>
-						<p>г. Ярославль<br /> пр-кт Фрунзе 3</p>
+						<p>г. Ярославль<br /> пр-кт Фрунзе, д. 3</p>
 					</div>
 
 					{/* Копирайт и ссылки */}

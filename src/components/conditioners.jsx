@@ -29,11 +29,13 @@ export default function Conditioners({ title = '', items = [] }) {
 	}, [])
 
 	return (
-		<section id="conditioners" className="py-4 md:py-16 bg-[--white-bc] text-[--text-color]">
+		<section
+			id="conditioners"
+			className="py-4 md:py-16 bg-[--white-bc] text-[--text-color] overflow-x-hidden"
+		>
 			<div className="content-container">
 				<div className="blaze-slider relative" ref={sliderRef}>
-
-					{/* Blaze контейнер */}
+					{/* Контейнер слайдов */}
 					<div className="blaze-container">
 						<div className="blaze-track-container">
 							<div className="blaze-track">
@@ -46,28 +48,26 @@ export default function Conditioners({ title = '', items = [] }) {
 						</div>
 					</div>
 
-					{/* Стрелки — адаптивно */}
-					<>
-						{/* Мобилка */}
-						<div className="flex md:hidden justify-center gap-4 mt-[24px]">
-							<button className="blaze-prev">
-								<Image src="/icons/arrow-left.svg" alt="Prev" width={36} height={36} />
-							</button>
-							<button className="blaze-next">
-								<Image src="/icons/arrow-right.svg" alt="Next" width={36} height={36} />
-							</button>
-						</div>
+					{/* Адаптивные стрелки — один экземпляр */}
+					<div
+						className="flex justify-center md:justify-between gap-3
+						mt-4 md:mt-0 md:absolute md:top-1/2 md:left-[-30px] md:right-[-30px] md:-translate-y-1/2
+						px-4 md:px-0 z-[999]"
+					>
+						<button
+							className="blaze-prev transition-transform hover:scale-105
+							w-[44px] h-[44px] flex items-center justify-center"
+						>
+							<Image src="/icons/arrow-l.svg" alt="Prev" width={44} height={44} />
+						</button>
 
-						{/* ПК */}
-						<div className="hidden md:flex absolute top-1/2 left-0 right-0 z-10 -translate-y-1/2 justify-between px-0">
-							<button className="blaze-prev absolute left-[-30px]">
-								<Image src="/icons/arrow-left.svg" alt="Prev" width={36} height={36} />
-							</button>
-							<button className="blaze-next absolute right-[-30px]">
-								<Image src="/icons/arrow-right.svg" alt="Next" width={36} height={36} />
-							</button>
-						</div>
-					</>
+						<button
+							className="blaze-next transition-transform hover:scale-105
+							w-[44px] h-[44px] flex items-center justify-center"
+						>
+							<Image src="/icons/arrow-r.svg" alt="Next" width={44} height={44} />
+						</button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -78,23 +78,24 @@ function ConditionerCard({ name, catalogLink, price, image, description }) {
 	return (
 		<Link
 			href="#form"
-			className="hover:opacity-100 group flex flex-col min-h-[390px] md:min-h-[430px] h-full rounded-md p-4 md:p-6 bg-white text-black transition-opacity duration-300"
+			className="hover:opacity-100 group flex flex-col min-h-[390px] md:min-h-[430px] h-full rounded-md p-4 md:p-6 bg-white text-black transition-opacity duration-300 z-100"
 		>
-			{/* Изображение */}
-			<div className="w-full h-[180px] md:h-[200px] mb-4 border border-[--main-color] overflow-hidden rounded">
-				<Image
-					src={image}
-					width={400}
-					height={200}
-					alt={name}
-					className="w-full h-full object-cover scale-[0.9]"
-				/>
-			</div>
+			{/* Изображение — не обрезается на мобилке */}
+			<div className="w-full h-[200px] mb-4 border border-[--main-color] rounded overflow-hidden">
+	<Image
+		src={image}
+		width={400}
+		height={200}
+		alt={name}
+		className="w-full h-full object-cover"
+	/>
+</div>
+
 
 			{/* Название */}
 			<h3 className="text-lg font-semibold text-[--second-color] mb-2">{name}</h3>
 
-			{/* Контентный блок */}
+			{/* Контент */}
 			<div className="flex flex-col flex-grow">
 				<p className="text-sm opacity-70 mb-3 line-clamp-3">{description}</p>
 
@@ -114,4 +115,3 @@ function ConditionerCard({ name, catalogLink, price, image, description }) {
 		</Link>
 	)
 }
-

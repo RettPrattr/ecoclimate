@@ -15,8 +15,10 @@ export default function Stages({ title, description, items }) {
 
                     {/* Блок с описанием и кнопкой */}
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
-                        <p className="w-full md:w-1/2 text-[18px] opacity-85">{description}</p>
-                        <LinkButton text="Оставить заявку" type={4} href="#form" />
+                    <p
+  className="w-full md:w-[55%] text-[18px] opacity-85"
+  dangerouslySetInnerHTML={{ __html: description }}
+/>                        <LinkButton text="Оставить заявку" type={4} href="#form" />
                     </div>
 
                     {/* Этапы */}

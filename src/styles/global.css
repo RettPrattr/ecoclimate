@@ -10,7 +10,7 @@ html {
   :root {
     --main-color: #158153;
     --second-color: #052B1B;
-	  --white-bc: hsl(0, 0%, 100%);
+    --white-bc: hsl(0, 0%, 100%);
     --text-color: #ffffff;
     --background-color: #158153;
     --lightening: #1d1d21;
@@ -25,6 +25,13 @@ html {
     color: var(--text-color);
     line-height: 1.6;
   }
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
 
   /* .raleway {
     font-family: 'Raleway', sans-serif;
@@ -45,7 +52,9 @@ html {
     @apply text-xl font-semibold leading-normal;
   }
 
-  p, li, a {
+  p,
+  li,
+  a {
     @apply text-[18px] leading-relaxed;
   }
 
@@ -115,35 +124,36 @@ html {
 }
 
 .content-container {
-	width: 100%;
-	max-width: 1280px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: var(--margin-mobile);
-	padding-right: var(--margin-mobile);
-  }
-  
-  @media (min-width: 768px) {
-	.content-container {
-	  padding-left: calc(var(--margin-mobile) * 1.5);
-	  padding-right: calc(var(--margin-mobile) * 1.5);
-	}
-  }
-  
-  @media (min-width: 1280px) {
-	.content-container {
-	  padding-left: var(--margin-pc);
-	  padding-right: var(--margin-pc);
-	}
-  }
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
 
-  .mobile-menu-open {
-    background-color: var(--second-color);
+@media (min-width: 768px) {
+  .content-container {
+    padding-left: calc(var(--margin-mobile) * 1.5);
+    padding-right: calc(var(--margin-mobile) * 1.5);
   }
+}
 
-    /* styles.css или tailwind-classes через className */
-  .logo-white {
-    transform: scale(0.88); /* подогнано под визуальный масштаб */
-    transform-origin: left center; /* чтобы не съезжал */
+@media (min-width: 1280px) {
+  .content-container {
+    padding-left: var(--margin-pc);
+    padding-right: var(--margin-pc);
   }
-  
+}
+
+.mobile-menu-open {
+  background-color: var(--second-color);
+}
+
+/* styles.css или tailwind-classes через className */
+.logo-white {
+  transform: scale(0.88);
+  /* подогнано под визуальный масштаб */
+  transform-origin: left center;
+  /* чтобы не съезжал */
+}

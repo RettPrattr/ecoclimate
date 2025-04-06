@@ -17,7 +17,7 @@ export default function Promo({ className = '' }) {
             {/* Адрес */}
             <Link
                 href="#contacts"
-                className="flex flex-row items-center gap-2 hover:text-[--second-color] transition-colors duration-200"
+                className="flex flex-row items-center gap-2 hover:opacity-80 transition-opacity duration-200"
             >
                 <Image
                     src={address.icon.url}
@@ -32,7 +32,7 @@ export default function Promo({ className = '' }) {
             {/* Телефон */}
             <Link
                 href="#contacts"
-                className="flex flex-row items-center gap-2 hover:text-[--second-color] transition-colors duration-200"
+                className="flex flex-row items-center gap-2 hover:opacity-80 transition-opacity duration-200"
             >
                 <Image
                     src={phone.icon.url}
