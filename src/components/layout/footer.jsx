@@ -10,9 +10,9 @@ export default function Footer() {
 				{/* Первый ряд */}
 				<div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 lg:py-10 gap-6">
 					{/* Логотип */}
-					<Link href="/" aria-label="На главную">
+					<Link href="/" aria-label="На главную" className='hover:opacity-100'>
 						<Image
-							src="/icons/logo-white.svg"
+							src="/icons/footer-logo.svg"
 							width={200}
 							height={200}
 							alt="Логотип компании"

@@ -4,25 +4,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Logo({ isMobile = false, isMenuOpen = false, className = '', onClick }) {
-	let logoSrc = '/icons/logo.svg'
-	let logoHeight = '70px'
-
-	if (isMobile) {
-		logoSrc = isMenuOpen ? '/icons/logo-mob 1.svg' : '/icons/logo-mob.svg'
-		logoHeight = '45px'
-	}
+	const logoSrc = isMobile
+		? isMenuOpen
+			? '/icons/wh-logo.svg'
+			: '/icons/gr-logo.svg'
+		: '/icons/desk-header-logo.svg'
 
 	return (
-		<div
-			className={`relative top-[6px] inline-flex items-center justify-center ${className}`}
-			style={{ height: logoHeight }}
-		>
+		<div className={`relative inline-flex items-center justify-center ${className}`}>
 			<Image
 				src={logoSrc}
-				width={200}
-				height={50}
 				alt="Логотип"
-				className="h-auto w-auto object-contain max-h-full"
+				fill
+				className="object-contain"
 			/>
 			<Link
 				href="/"

@@ -72,7 +72,7 @@ export default function Form({
                       errors.name ? 'border-red-500' : 'border-white'
                     }`}
                   />
-                  <div className="min-h-[20px] mt-2">
+                  <div className="hidden md:block min-h-[20px] mt-2">
                     {errors.name && (
                       <p className="text-sm text-red-300">{errors.name.message}</p>
                     )}
@@ -90,7 +90,7 @@ export default function Form({
                       errors.phone ? 'border-red-500' : 'border-white'
                     }`}
                   />
-                  <div className="min-h-[20px] mt-2">
+                  <div className="hidden md:block min-h-[20px] mt-2">
                     {errors.phone && (
                       <p className="text-sm text-red-300">{errors.phone.message}</p>
                     )}
@@ -108,7 +108,7 @@ export default function Form({
                 </div>
               </div>
 
-              <p className="text-sm text-[--text-color] mt-4">
+              <p className="text-sm text-[--text-color]">
                 {consentText}
                 <Link href={policyLink.url} className="text-sm underline">
                   {policyLink.text}

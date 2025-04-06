@@ -35,6 +35,11 @@ html {
   }
 
 
+  a {
+    transform: translateZ(0) !important;
+  }
+
+
 
   h3 {
     @apply text-xl font-semibold leading-normal;
@@ -45,7 +50,7 @@ html {
   }
 
   a {
-    @apply transition-opacity duration-300;
+    @apply transition-opacity duration-300 will-change-transform;
   }
 
   a:hover {

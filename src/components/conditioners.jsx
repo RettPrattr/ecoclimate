@@ -60,10 +60,10 @@ export default function Conditioners({ title = '', items = [] }) {
 
 						{/* ПК */}
 						<div className="hidden md:flex absolute top-1/2 left-0 right-0 z-10 -translate-y-1/2 justify-between px-0">
-							<button className="blaze-prev absolute left-[30px]">
+							<button className="blaze-prev absolute left-[-30px]">
 								<Image src="/icons/arrow-left.svg" alt="Prev" width={36} height={36} />
 							</button>
-							<button className="blaze-next absolute right-[30px]">
+							<button className="blaze-next absolute right-[-30px]">
 								<Image src="/icons/arrow-right.svg" alt="Next" width={36} height={36} />
 							</button>
 						</div>
