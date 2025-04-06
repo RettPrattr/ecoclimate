@@ -37,7 +37,7 @@ export default function Contacts({ className, ...props }) {
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
-                                г. Ярославль, пр-кт Фрунзе 3
+                                г. Ярославль, пр-кт Фрунзе, д. 3
                             </a>
                         </div>
 
