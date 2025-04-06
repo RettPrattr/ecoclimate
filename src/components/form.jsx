@@ -53,9 +53,9 @@ export default function Form({
     <section id={id} className="raleway bg-[--white-bc] text-[--text-color] pb-16 relative z-10">
       <div className="content-container !px-[16px]">
       <div
-  className={`bg-[--main-color] -mb-[220px] px-12 ${
+  className={`bg-[--main-color] -mb-[220px] px-6 md:px-12 ${
     isSuccess ? 'py-0' : 'py-10 md:py-16'
-  } relative z-20 flex items-center justify-center min-h-[300px] text-center`}
+  } relative z-20 flex justify-center min-h-[300px]`}
 >
           {isSuccess ? (
             <p className="text-2xl md:text-3xl font-medium text-[--text-color]">
