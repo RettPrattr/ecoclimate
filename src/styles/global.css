@@ -37,6 +37,17 @@ html {
     touch-action: none;
   }
 
+  @layer utilities {
+    .group:hover .circle {
+      fill: var(--second-color);
+      stroke: var(--second-color);
+    }
+  
+    .group:hover .arrow {
+      fill: var(--main-color);
+    }
+  }
+
 
   /* .raleway {
     font-family: 'Raleway', sans-serif;
