@@ -32,6 +32,11 @@ html {
     width: 100%;
   }
 
+  body.modal-opened-mobile {
+    overflow: hidden;
+    touch-action: none;
+  }
+
 
   /* .raleway {
     font-family: 'Raleway', sans-serif;

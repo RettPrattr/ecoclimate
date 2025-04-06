@@ -11,6 +11,8 @@ export default function Header() {
 	const { logo, internalLinks } = data.header
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	const [isMobile, setIsMobile] = useState(false)
+	const [lastScrollTop, setLastScrollTop] = useState(0)
+	const [isVisible, setIsVisible] = useState(true)
 
 	useEffect(() => {
 		const updateMobile = () => {
@@ -22,8 +24,38 @@ export default function Header() {
 	}, [])
 
 	useEffect(() => {
-		document.body.classList.toggle('modal-opened-mobile', isMobileMenuOpen)
-		return () => document.body.classList.remove('modal-opened-mobile')
+		if (isMobile) {
+			const handleScroll = () => {
+				const scrollTop = window.scrollY || document.documentElement.scrollTop
+
+				if (scrollTop > lastScrollTop && scrollTop > 100) {
+					setIsVisible(false)
+				} else {
+					setIsVisible(true)
+				}
+				setLastScrollTop(scrollTop)
+			}
+
+			if (!isMobileMenuOpen) {
+				window.addEventListener('scroll', handleScroll)
+			}
+
+			return () => window.removeEventListener('scroll', handleScroll)
+		}
+	}, [isMobile, lastScrollTop, isMobileMenuOpen])
+
+	useEffect(() => {
+		if (isMobileMenuOpen) {
+			document.body.classList.add('modal-opened-mobile')
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.classList.remove('modal-opened-mobile')
+			document.body.style.overflow = ''
+		}
+		return () => {
+			document.body.classList.remove('modal-opened-mobile')
+			document.body.style.overflow = ''
+		}
 	}, [isMobileMenuOpen])
 
 	const handleLinkClick = () => {
@@ -33,39 +65,45 @@ export default function Header() {
 	return (
 		<header
 			className={`
-				sticky top-[-1px] z-20 text-[--text-color]
-				${isMobileMenuOpen ? 'mobile-menu-open' : 'bg-[--white-bc]'}
+				${isMobile
+					? `fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+							isVisible ? 'translate-y-0' : '-translate-y-full'
+					  } ${isMobileMenuOpen ? 'bg-[--second-color]' : 'bg-[--white-bc]'}`
+					: 'sticky top-[-1px] z-20 bg-[--white-bc]'}
+				text-[--text-color]
 			`}
 		>
 			<div className="content-container relative">
-				<div className="flex items-center justify-between py-4 lg:py-6">
-                <div
-	className={`
-		z-40 relative w-[133px] h-[45px] lg:w-[200px] lg:h-[70px]
-		${!isMobile ? 'top-[2px]' : ''}
-	`}
->
-	<Image
-		src={
-			isMobile
-				? isMobileMenuOpen
-					? '/icons/wh-logo.svg'
-					: '/icons/gr-logo.svg'
-				: '/icons/desk-header-logo.svg'
-		}
-		alt="Логотип"
-		fill
-		className="object-contain"
-	/>
-	<Link
-		href="/"
-		aria-label="На главную"
-		className="absolute inset-0 z-10"
-		onClick={handleLinkClick}
-	/>
-</div>
+				{/* Верхняя панель */}
+				<div className="flex items-center justify-between py-4 lg:py-6 z-50 relative">
+					{/* Логотип */}
+					<div
+						className={`
+							z-40 relative w-[133px] h-[45px] lg:w-[200px] lg:h-[70px]
+							${!isMobile ? 'top-[2px]' : ''}
+						`}
+					>
+						<Image
+							src={
+								isMobile
+									? isMobileMenuOpen
+										? '/icons/wh-logo.svg'
+										: '/icons/gr-logo.svg'
+									: '/icons/desk-header-logo.svg'
+							}
+							alt="Логотип"
+							fill
+							className="object-contain"
+						/>
+						<Link
+							href="/"
+							aria-label="На главную"
+							className="absolute inset-0 z-10"
+							onClick={handleLinkClick}
+						/>
+					</div>
 
-
+					{/* Навигация (ПК) */}
 					<nav role="navigation" className="hidden lg:flex">
 						<ul className="flex flex-row items-center">
 							{internalLinks?.map(({ link, text }) => (
@@ -84,10 +122,12 @@ export default function Header() {
 						</ul>
 					</nav>
 
+					{/* Кнопка (ПК) */}
 					<div className="hidden lg:block">
 						<LinkButton text="Отправить заявку" type={2} href="#form" />
 					</div>
 
+					{/* Бургер (моб) */}
 					<Burger
 						className="lg:hidden z-50"
 						isOpen={isMobileMenuOpen}
@@ -95,8 +135,12 @@ export default function Header() {
 					/>
 				</div>
 
+				{/* Мобильное меню */}
 				<div
-					className={`mobile-menu lg:hidden fixed inset-0 z-20 flex flex-col justify-start pt-36 pb-10 transition-all duration-300
+					className={`
+						mobile-menu lg:hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] z-40
+						flex flex-col justify-start pt-12 pb-10 overflow-y-hidden
+						transition-all duration-300
 						${isMobileMenuOpen ? 'opened bg-[--second-color] visible opacity-100' : 'invisible opacity-0'}
 					`}
 				>
