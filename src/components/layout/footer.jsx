@@ -44,7 +44,7 @@ export default function Footer() {
 					<div className="flex">
 						{/* Первый элемент — без ml-3 */}
 						<a
-							href=""
+							href="https://vk.com/id1025121437"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="hover:opacity-80 transition-opacity md:ml-3"
@@ -54,7 +54,7 @@ export default function Footer() {
 
 						{/* Второй элемент — ml-3 на всех разрешениях + md:ml-3 */}
 						<a
-							href=""
+							href="https://t.me/Ecoclimat76"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="hover:opacity-80 transition-opacity ml-3 md:ml-3"
@@ -64,7 +64,7 @@ export default function Footer() {
 
 						{/* Третий элемент — ml-3 на всех разрешениях + md:ml-3 */}
 						<a
-							href=""
+							href="https://wa.me/79806640456"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="hover:opacity-80 transition-opacity ml-3 md:ml-3"

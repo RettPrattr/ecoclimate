@@ -161,13 +161,13 @@ export default function Header() {
 					</div>
 
 					<div className="mt-6 pl-4 flex gap-4">
-						<a href="" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+						<a href="https://vk.com/id1025121437" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
 							<Image src="/icons/vk.svg" width={48} height={48} alt="VK" />
 						</a>
-						<a href="" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+						<a href="https://t.me/Ecoclimat76" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
 							<Image src="/icons/tg.svg" width={48} height={48} alt="Telegram" />
 						</a>
-						<a href="" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+						<a href="https://wa.me/79806640456" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
 							<Image src="/icons/wp.svg" width={48} height={48} alt="Whatsapp" />
 						</a>
 					</div>
