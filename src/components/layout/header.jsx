@@ -139,7 +139,7 @@ export default function Header() {
 				<div
 					className={`
 						mobile-menu lg:hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] z-40
-						flex flex-col justify-start pt-12 pb-10 overflow-y-hidden
+						flex flex-col justify-start pt-20 pb-10 overflow-y-hidden
 						transition-all duration-300
 						${isMobileMenuOpen ? 'opened bg-[--second-color] visible opacity-100' : 'invisible opacity-0'}
 					`}
@@ -154,7 +154,7 @@ export default function Header() {
 						))}
 					</ul>
 
-					<div className="mt-8 pl-4 text-[--white-bc] text-sm leading-relaxed">
+					<div className="mt-20 pl-4 text-[--white-bc] text-sm leading-relaxed">
 						<Link href="#contacts" onClick={handleLinkClick} className="opacity-80 hover:underline">
 							г. Ярославль пр-кт Фрунзе 3
 						</Link>
@@ -162,13 +162,13 @@ export default function Header() {
 
 					<div className="mt-6 pl-4 flex gap-4">
 						<a href="https://vk.com/id1025121437" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-							<Image src="/icons/vk.svg" width={48} height={48} alt="VK" />
+							<Image src="/icons/vk.svg" width={54} height={54} alt="VK" />
 						</a>
 						<a href="https://t.me/Ecoclimat76" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-							<Image src="/icons/tg.svg" width={48} height={48} alt="Telegram" />
+							<Image src="/icons/tg.svg" width={54} height={54} alt="Telegram" />
 						</a>
 						<a href="https://wa.me/79806640456" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-							<Image src="/icons/wp.svg" width={48} height={48} alt="Whatsapp" />
+							<Image src="/icons/wp.svg" width={54} height={54} alt="Whatsapp" />
 						</a>
 					</div>
 
@@ -176,7 +176,7 @@ export default function Header() {
 						<Link
 							href="#form"
 							onClick={handleLinkClick}
-							className="inline-block font-normal px-7 py-2 rounded-full transition-colors duration-300
+							className="inline-block font-normal px-8 py-3 rounded-full transition-colors duration-300
 								bg-transparent text-white border border-white hover:bg-white hover:text-[--background-color]"
 						>
 							<span className="relative md:top-[1px]">Отправить заявку</span>
