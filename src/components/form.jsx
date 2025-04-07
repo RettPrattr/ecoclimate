@@ -54,11 +54,11 @@ export default function Form({
       <div className="content-container !px-[16px]">
       <div
   className={`bg-[--main-color] -mb-[220px] px-6 md:px-12 ${
-    isSuccess ? 'py-0' : 'py-10 md:py-16'
-  } relative z-20 flex justify-center min-h-[300px]`}
+    isSuccess ? 'py-0 h-auto' : 'min-h-[300px] py-10 md:py-16'
+  } relative z-20 flex justify-center`}
 >
           {isSuccess ? (
-            <p className="text-2xl md:text-3xl font-medium text-[--text-color]">
+            <p className="text-2xl md:text-4xl my-6 md:my-16 font-medium text-[--text-color]">
               Заявка успешно отправлена! <br />
               В ближайшее время менеджер с вами свяжется.
             </p>
