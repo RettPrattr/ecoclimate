@@ -22,27 +22,27 @@
     },
     "internalLinks": [
       {
-        "link": "#conditioners",
+        "link": "conditioners",
         "text": "Кондиционеры"
       },
       {
-        "link": "#advantages",
+        "link": "advantages",
         "text": "Преимущества"
       },
       {
-        "link": "#services",
+        "link": "services",
         "text": "Услуги"
       },
       {
-        "link": "#stages",
+        "link": "stages",
         "text": "Этапы"
       },
       {
-        "link": "#about",
+        "link": "about",
         "text": "О нас"
       },
       {
-        "link": "#contacts",
+        "link": "contacts",
         "text": "Контакты"
       }
     ],

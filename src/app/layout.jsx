@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
 				<Header
 				/>
 				{/* <Script /> */}
-				<main className='min-h-screen bg-[--background-color]'>
+				<main className='min-h-screen'>
 					{children}
 				</main>
 				<Footer

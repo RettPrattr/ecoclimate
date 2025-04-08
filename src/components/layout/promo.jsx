@@ -3,10 +3,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import data from '@/data/data.json'
+import { usePathname } from 'next/navigation'
 
 export default function Promo({ className = '' }) {
+    const pathname = usePathname()
+
     const address = data.promo?.address
     const phone = data.promo?.phone
+
+    const isPolicyPage = pathname === '/policy'
 
     if (!address || !phone) return null
 
@@ -16,7 +21,7 @@ export default function Promo({ className = '' }) {
         >
             {/* Адрес */}
             <Link
-                href="#contacts"
+                href={isPolicyPage ? `/#contacts` : `#contacts`}
                 className="flex flex-row items-center gap-2 hover:opacity-80 transition-opacity duration-200"
             >
                 <Image
@@ -31,7 +36,7 @@ export default function Promo({ className = '' }) {
 
             {/* Телефон */}
             <Link
-                href="#contacts"
+                href={isPolicyPage ? `/#contacts` : `#contacts`}
                 className="flex flex-row items-center gap-2 hover:opacity-80 transition-opacity duration-200"
             >
                 <Image

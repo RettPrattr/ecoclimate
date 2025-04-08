@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import ReactInputMask from 'react-input-mask'
 import Link from 'next/link'
 import LinkButton from '@/components/link-button'
-import sendMessage from '@/utils/server/telegram'
+import sendMessage from '@/utils/sendMessage'
 import { useState } from 'react'
 
 const schema = z.object({
