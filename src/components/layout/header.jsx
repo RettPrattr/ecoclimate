@@ -28,6 +28,8 @@ export default function Header() {
     return () => window.removeEventListener('resize', updateMobile)
   }, [])
 
+  
+
   useEffect(() => {
     if (isMobile) {
       const handleScroll = () => {
@@ -142,64 +144,65 @@ export default function Header() {
         </div>
 
         {/* Мобильное меню */}
-        <div
-          className={`
-            mobile-menu lg:hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] z-40
-            flex flex-col justify-start pt-20 pb-10 overflow-y-hidden
-            transition-all duration-300
-            ${isMobileMenuOpen ? 'opened bg-[--second-color] visible opacity-100' : 'invisible opacity-0'}
-          `}
+{/* Мобильное меню */}
+<div
+  className={`
+    mobile-menu lg:hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] z-40
+    flex flex-col justify-around overflow-y-hidden
+    transition-all duration-300
+    ${isMobileMenuOpen ? 'opened bg-[--second-color] visible opacity-100' : 'invisible opacity-0'}
+  `}
+>
+  <ul className="flex flex-col gap-2 text-[--white-bc] text-[18px] font-bold pl-4">
+    {internalLinks?.map(({ link, text }) => (
+      <li key={text}>
+        <Link
+          href={isPolicyPage ? `/#${link}` : `#${link}`}
+          className="hover:underline"
+          onClick={handleLinkClick}
         >
-          <ul className="flex flex-col gap-4 text-[--white-bc] text-[18px] font-bold pl-4">
-            {internalLinks?.map(({ link, text }) => (
-              <li key={text}>
-                <Link
-                  href={isPolicyPage ? `/#${link}` : `#${link}`}
-                  className="hover:underline"
-                  onClick={handleLinkClick}
-                >
-                  {text}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {text}
+        </Link>
+      </li>
+    ))}
+  </ul>
 
-          <div className="mt-20 pl-4 text-[--white-bc] text-sm leading-relaxed">
-            <Link href="#contacts" onClick={handleLinkClick} className="opacity-80 hover:underline">
-              г. Ярославль пр-кт Фрунзе 3
-            </Link>
-          </div>
+  <div className="text-[--white-bc] text-sm leading-relaxed pl-4 flex flex-col">
+    <Link href="#contacts" onClick={handleLinkClick} className="opacity-80 hover:underline">
+      г. Ярославль пр-кт Фрунзе 3
+    </Link>
+	<div className="flex gap-4 mb-6 mt-3">
+    <a href="https://vk.com/id1025121437" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+      <Image src="/icons/vk.svg" width={54} height={54} alt="VK" />
+    </a>
+    <a href="https://t.me/Ecoclimat76" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+      <Image src="/icons/tg.svg" width={54} height={54} alt="Telegram" />
+    </a>
+    <a href="https://wa.me/79806640456" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+      <Image src="/icons/wp.svg" width={54} height={54} alt="Whatsapp" />
+    </a>
+  </div>
+  <div className="mb-6">
+    <Link
+      href={isPolicyPage ? `/#form` : `#form`}
+      onClick={handleLinkClick}
+      className="inline-block font-normal px-8 py-3 rounded-full transition-colors duration-300
+        bg-transparent text-white border border-white hover:bg-white hover:text-[--background-color]"
+    >
+      <span className="relative md:top-[1px]">Отправить заявку</span>
+    </Link>
+  </div>
+  </div>
 
-          <div className="mt-6 pl-4 flex gap-4">
-            <a href="https://vk.com/id1025121437" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <Image src="/icons/vk.svg" width={54} height={54} alt="VK" />
-            </a>
-            <a href="https://t.me/Ecoclimat76" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <Image src="/icons/tg.svg" width={54} height={54} alt="Telegram" />
-            </a>
-            <a href="https://wa.me/79806640456" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <Image src="/icons/wp.svg" width={54} height={54} alt="Whatsapp" />
-            </a>
-          </div>
 
-          <div className="mt-6 pl-4">
-            <Link
-			  href={isPolicyPage ? `/#form` : `#form`}
-              onClick={handleLinkClick}
-              className="inline-block font-normal px-8 py-3 rounded-full transition-colors duration-300
-                bg-transparent text-white border border-white hover:bg-white hover:text-[--background-color]"
-            >
-              <span className="relative md:top-[1px]">Отправить заявку</span>
-            </Link>
-          </div>
+  <div className="text-[--white-bc] text-sm pl-4 pb-4">
+    <p className="mb-1">© Экоклимат {new Date().getFullYear()}</p>
+    <Link href="/policy" onClick={handleLinkClick} className="hover:underline">
+      Политика конфиденциальности
+    </Link>
+  </div>
+</div>
 
-          <div className="mt-auto pl-6 text-[--white-bc] text-sm pt-10">
-            <p className="mb-1">© Экоклимат {new Date().getFullYear()}</p>
-            <Link href="/policy" onClick={handleLinkClick} className="hover:underline">
-              Политика конфиденциальности
-            </Link>
-          </div>
-        </div>
       </div>
     </header>
   )
